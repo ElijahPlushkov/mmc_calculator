@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMC Cambridge Score Calculator</title>
+    <style>
+        .hiddenKet {
+            display: none;
+        }
+        .hiddenPet {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>MMC Cambridge Score Calculator</h1>
+    <h2>Select an exam</h2>
+    <button id="selectKet">KET</button>
+    <button id="selectPet">PET</button>
+    <button id="selectFce">FCE</button>
+    <button id="selectCae">CAE</button>
+    <br>
+    <br>
+
+<!-- KET SECTION START -->
+<div id="parametersKet" class="hiddenKet">
+    <h2>KET</h2>
+    <label>Listening</label>
+    <input type="number" id="listeningKetInput"><br>
+    <label>Reading and Writing</label>
+    <input type="number" id="readingWritingKetInput"><br>
+    <label>Speaking</label>
+    <input type="number" id="speakingKetInput"><br>
+    <br>
+    <p id="ketErrorMessaging"></p>
+    <br>
+    <button type="submit" id="calculateKet">Calculate</button>
+    <br>
+    <br>
+    <table border="1" id="ketResults">
+        <tr>
+            <td>Average Score</td>
+            <td id="averageScoreKet">140</td>
+            <td id="gradeKet">A2 Grade A</td>
+        </tr>
+        <tr>
+            <td>Listening</td>
+            <td id="listeningKetResult">140</td>
+        </tr>
+        <tr>
+            <td>Reading and Writing</td>
+            <td id="readingWritingKetResult">150</td>
+        </tr>
+        <tr>
+            <td>Speaking</td>
+            <td id="speakingKetResult">160</td>
+        </tr>
+    </table>
+</div>
+<!-- KET SECTION END -->
+
+<!-- PET SECTION START -->
+<div id="parametersPet" class="hiddenPet">
+    <h2>PET</h2>
+    <label>Listening</label>
+    <input type="number" id="listeningPetInput"><br>
+    <label>Reading</label>
+    <input type="number" id="readingPetInput"><br>
+    <label>Writing</label>
+    <input type="number" id="writingPetInput"><br>
+    <label>Speaking</label>
+    <input type="number" id="speakingPetInput"><br>
+    <br>
+    <p id="petErrorMessaging"></p>
+    <br>
+    <button type="submit" id="calculatePet">Calculate</button>
+    <br>
+    <br>
+    <table border="1" id="petResults">
+        <tr>
+            <td>Average Score</td>
+            <td id="averageScorePet">140</td>
+            <td id="gradePet">A2 Grade A</td>
+        </tr>
+        <tr>
+            <td>Listening</td>
+            <td id="listeningPetResult">140</td>
+        </tr>
+        <tr>
+            <td>Reading</td>
+            <td id="readingPetResult">150</td>
+        </tr>
+        <tr>
+            <td>Writing</td>
+            <td id="writingPetResult">150</td>
+        </tr>
+        <tr>
+            <td>Speaking</td>
+            <td id="speakingPetResult">160</td>
+        </tr>
+    </table>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
