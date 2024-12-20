@@ -445,3 +445,333 @@ calculatePet.addEventListener('click', function () {
 });
 
 //PET SECTION END
+
+//FCE SECTION START
+const selectFCE = document.getElementById("selectFCE");
+const parametersFCE = document.getElementById("parametersFCE");
+
+selectFCE.addEventListener('click', function () {
+    parametersFCE.classList.toggle("hiddenFCE");
+});
+
+const calculateFCE = document.getElementById("calculateFCE");
+
+const listeningFCEInput = document.getElementById("listeningFCEInput");
+const readingFCEInput = document.getElementById("readingFCEInput");
+const useFCEInput = document.getElementById("useFCEInput");
+const writingFCEInput = document.getElementById("writingFCEInput");
+const speakingFCEInput = document.getElementById("speakingFCEInput");
+
+const fceErrorMessaging = document.getElementById("fceErrorMessaging");
+
+const averageScoreFCE = document.getElementById("averageScoreFCE");
+
+const listeningFCEResult = document.getElementById("listeningFCEResult");
+const readingFCEResult = document.getElementById("readingFCEResult");
+const useFCEResult = document.getElementById("useFCEResult");
+const writingFCEResult = document.getElementById("writingFCEResult");
+const speakingFCEResult = document.getElementById("speakingFCEResult");
+
+const gradeFCE = document.getElementById("gradeFCE");
+
+fceListening = {
+    30: 190,
+    29: 187,
+    28: 183,
+    27: 180,
+    26: 178,
+    25: 176,
+    24: 173,
+    23: 171,
+    22: 169,
+    21: 167,
+    20: 164,
+    19: 162,
+    18: 160,
+    17: 157,
+    16: 153,
+    15: 150,
+    14: 147,
+    13: 143,
+    12: 140,
+    11: 136,
+    10: 131,
+    9: 127,
+    8: 122,
+    7: 107,
+    6: 92,
+    5: 76,
+    4: 61,
+    3: 46,
+    2: 31,
+    1: 15,
+    0: 0
+};
+
+fceReading = {
+    42: 190,
+    41: 188,
+    40: 186,
+    39: 184,
+    38: 182,
+    37: 180,
+    36: 178,
+    35: 177,
+    34: 175,
+    33: 174,
+    32: 172,
+    31: 171,
+    30: 169,
+    29: 168,
+    28: 166,
+    27: 165,
+    26: 163,
+    25: 162,
+    24: 160,
+    23: 158,
+    22: 155,
+    21: 153,
+    20: 150,
+    19: 148,
+    18: 145,
+    17: 143,
+    16: 140,
+    15: 137,
+    14: 134,
+    13: 131,
+    12: 128,
+    11: 125,
+    10: 122,
+    9: 110,
+    8: 98,
+    7: 85,
+    6: 73,
+    5: 61,
+    4: 49,
+    3: 37,
+    2: 24,
+    1: 12,
+    0: 0
+};
+
+fceUse = {
+    28: 190,
+    27: 188,
+    26: 185,
+    25: 183,
+    24: 180,
+    23: 177,
+    22: 173,
+    21: 170,
+    20: 167,
+    19: 163,
+    18: 160,
+    17: 157,
+    16: 154,
+    15: 151,
+    14: 149,
+    13: 146,
+    12: 143,
+    11: 140,
+    10: 136,
+    9: 131,
+    8: 127,
+    7: 122,
+    6: 105,
+    5: 87,
+    4: 70,
+    3: 52,
+    2: 35,
+    1: 17,
+    0: 0
+};
+
+fceWriting = {
+    40: 190,
+    39: 188,
+    38: 187,
+    37: 185,
+    36: 183,
+    35: 182,
+    34: 180,
+    33: 178,
+    32: 176,
+    31: 174,
+    30: 172,
+    29: 170,
+    28: 168,
+    27: 166,
+    26: 164,
+    25: 162,
+    24: 160,
+    23: 158,
+    22: 155,
+    21: 153,
+    20: 150,
+    19: 148,
+    18: 145,
+    17: 143,
+    16: 140,
+    15: 137,
+    14: 134,
+    13: 131,
+    12: 128,
+    11: 125,
+    10: 122,
+    9: 110,
+    8: 98,
+    7: 85,
+    6: 73,
+    5: 61,
+    4: 49,
+    3: 37,
+    2: 24,
+    1: 12,
+    0: 0
+};
+
+fceSpeaking = {
+    60: 190,
+    59: 189,
+    58: 187,
+    57: 185,
+    56: 183,
+    55: 182,
+    54: 180,
+    53: 179,
+    52: 178,
+    51: 177,
+    50: 176,
+    49: 174,
+    48: 173,
+    47: 172,
+    46: 171,
+    45: 170,
+    44: 169,
+    43: 168,
+    42: 167,
+    41: 166,
+    40: 164,
+    39: 163,
+    38: 162,
+    37: 161,
+    36: 160,
+    35: 158,
+    34: 157,
+    33: 155,
+    32: 153,
+    31: 152,
+    30: 150,
+    29: 148,
+    28: 147,
+    27: 145,
+    26: 143,
+    25: 142,
+    24: 140,
+    23: 138,
+    22: 136,
+    21: 135,
+    20: 133,
+    19: 131,
+    18: 129,
+    17: 127,
+    16: 126,
+    15: 124,
+    14: 122,
+    13: 113,
+    12: 102,
+    11: 96,
+    10: 87,
+    9: 78,
+    8: 70,
+    7: 61,
+    6: 52,
+    5: 44,
+    4: 35,
+    3: 26,
+    2: 17,
+    1: 9,
+    0: 0
+
+};
+
+function calculateListeningScoreFCE(inputValue) {
+    let result = fceListening[inputValue];
+    if (inputValue > 30) {
+        fceErrorMessaging.textContent = "The max score for FCE Listening cannot exceed 30 points.";
+        result = "Error";
+    } 
+    return result;
+}
+
+function calculateReadingScoreFCE(inputValue) {
+    let result = fceReading[inputValue];
+    if (inputValue > 42) {
+        fceErrorMessaging.textContent = "The max score for FCE Reading cannot exceed 42 points.";
+        result = "Error";
+    } 
+    return result;
+}
+
+function calculateUseScoreFCE(inputValue) {
+    let result = fceUse[inputValue];
+    if (inputValue > 28) {
+        fceErrorMessaging.textContent = "The max score for FCE Use of English cannot exceed 28 points.";
+        result = "Error";
+    } 
+    return result;
+}
+
+function calculateWritingScoreFCE(inputValue) {
+    let result = fceWriting[inputValue];
+    if (inputValue > 40) {
+        fceErrorMessaging.textContent = "The max score for FCE Writing cannot exceed 40 points.";
+        result = "Error";
+    } 
+    return result;
+}
+
+function calculateSpeakingScoreFCE(inputValue) {
+    let result = fceSpeaking[inputValue];
+    if (inputValue > 60) {
+        fceErrorMessaging.textContent = "The max score for FCE Speaking cannot exceed 60 points.";
+        result = "Error";
+    } 
+    return result;
+}
+
+calculateFCE.addEventListener('click', function () {
+    const resultListening = calculateListeningScoreFCE(Number(listeningFCEInput.value));
+    const resultReading = calculateReadingScoreFCE(Number(readingFCEInput.value));
+    const resultUse = calculateUseScoreFCE(Number(useFCEInput.value));
+    const resultWriting = calculateWritingScoreFCE(Number(writingFCEInput.value));
+    const resultSpeaking = calculateSpeakingScoreFCE(Number(speakingFCEInput.value));
+
+    listeningFCEResult.textContent = resultListening;
+    readingFCEResult.textContent = resultReading;
+    useFCEResult.textContent = resultUse;
+    writingFCEResult.textContent = resultWriting;
+    speakingFCEResult.textContent = resultSpeaking;
+
+    const averageFCEResult = Math.round((0.20 * resultListening) + (0.20 * resultReading) + (0.20 * resultUse) + (0.20 * resultWriting) + (0.20 * resultSpeaking));
+    averageScoreFCE.textContent = averageFCEResult;
+
+    if (averageFCEResult >= 180) {
+        gradeFCE.textContent = "Grade A (C1 level)";
+    }
+    else if (averageFCEResult >= 173) {
+        gradeFCE.textContent = "Grade B (B2 level)";
+    }
+    else if (averageFCEResult >= 160) {
+        gradeFCE.textContent = "Grade C (B2 level)";
+    }
+    else if (averageFCEResult >= 140) {
+        gradeFCE.textContent = "B1 level";
+    }
+    else if (averageFCEResult >= 120) {
+        gradeFCE.textContent = "A2 level";
+    }
+    else {
+        gradeFCE.textContent = "A1 level";
+    }
+});

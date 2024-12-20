@@ -11,6 +11,9 @@
         .hiddenPet {
             display: none;
         }
+        .hiddenFCE {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -18,8 +21,8 @@
     <h2>Select an exam</h2>
     <button id="selectKet">KET</button>
     <button id="selectPet">PET</button>
-    <button id="selectFce">FCE</button>
-    <button id="selectCae">CAE</button>
+    <button id="selectFCE">FCE</button>
+    <button id="selectCAE">CAE</button>
     <br>
     <br>
 
@@ -101,7 +104,56 @@
         </tr>
     </table>
 </div>
+<!-- PET SECTION END -->
 
+<!-- FCE SECTION START -->
+<div id="parametersFCE" class="hiddenFCE">
+    <h2>FCE</h2>
+    <label>Listening</label>
+    <input type="number" id="listeningFCEInput"><br>
+    <label>Reading</label>
+    <input type="number" id="readingFCEInput"><br>
+    <label>Use of English</label>
+    <input type="number" id="useFCEInput"><br>
+    <label>Writing</label>
+    <input type="number" id="writingFCEInput"><br>
+    <label>Speaking</label>
+    <input type="number" id="speakingFCEInput"><br>
+    <br>
+    <p id="fceErrorMessaging"></p>
+    <br>
+    <button type="submit" id="calculateFCE">Calculate</button>
+    <br>
+    <br>
+    <table border="1" id="fceResults">
+        <tr>
+            <td>Average Score</td>
+            <td id="averageScoreFCE">140</td>
+            <td id="gradeFCE">A2 Grade A</td>
+        </tr>
+        <tr>
+            <td>Listening</td>
+            <td id="listeningFCEResult">140</td>
+        </tr>
+        <tr>
+            <td>Reading</td>
+            <td id="readingFCEResult">150</td>
+        </tr>
+        <tr>
+            <td>Use of English</td>
+            <td id="useFCEResult">150</td>
+        </tr>
+        <tr>
+            <td>Writing</td>
+            <td id="writingFCEResult">150</td>
+        </tr>
+        <tr>
+            <td>Speaking</td>
+            <td id="speakingFCEResult">160</td>
+        </tr>
+    </table>
+</div>
+<!-- FCE SECTION END -->
 <script src="index.js"></script>
 </body>
 </html>
