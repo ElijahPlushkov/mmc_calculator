@@ -775,3 +775,361 @@ calculateFCE.addEventListener('click', function () {
         gradeFCE.textContent = "A1 level";
     }
 });
+//FCE SECTION END
+
+//CAE SECTION START
+const selectCAE = document.getElementById("selectCAE");
+const parametersCAE = document.getElementById("parametersCAE");
+
+selectCAE.addEventListener('click', function () {
+    parametersCAE.classList.toggle("hiddenCAE");
+});
+
+const calculateCAE = document.getElementById("calculateCAE");
+
+const listeningCAEInput = document.getElementById("listeningCAEInput");
+const readingCAEInput = document.getElementById("readingCAEInput");
+const useCAEInput = document.getElementById("useCAEInput");
+const writingCAEInput = document.getElementById("writingCAEInput");
+const speakingCAEInput = document.getElementById("speakingCAEInput");
+
+const caeErrorMessaging = document.getElementById("caeErrorMessaging");
+
+const averageScoreCAE = document.getElementById("averageScoreCAE");
+
+const listeningCAEResult = document.getElementById("listeningCAEResult");
+const readingCAEResult = document.getElementById("readingCAEResult");
+const useCAEResult = document.getElementById("useCAEResult");
+const writingCAEResult = document.getElementById("writingCAEResult");
+const speakingCAEResult = document.getElementById("speakingCAEResult");
+
+const gradeCAE = document.getElementById("gradeCAE");
+
+caeListening = {
+    30: 210,
+    29: 208,
+    28: 205,
+    27: 203,
+    26: 200,
+    25: 198,
+    24: 195,
+    23: 193,
+    22: 190,
+    21: 188,
+    20: 185,
+    19: 183,
+    18: 180,
+    17: 176,
+    16: 172,
+    15: 168,
+    14: 164,
+    13: 160,
+    12: 151,
+    11: 142,
+    10: 129,
+    9: 116,
+    8: 103,
+    7: 90,
+    6: 77,
+    5: 65,
+    4: 52,
+    3: 39,
+    2: 26,
+    1: 13,
+    0: 0
+};
+
+caeReading = {
+    50: 210,
+    49: 209,
+    48: 207,
+    47: 206,
+    46: 204,
+    45: 203,
+    44: 201,
+    43: 200,
+    42: 198,
+    41: 196,
+    40: 195,
+    39: 193,
+    38: 191,
+    37: 189,
+    36: 187,
+    35: 185,
+    34: 184,
+    33: 182,
+    32: 180,
+    31: 178,
+    30: 176,
+    29: 173,
+    28: 171,
+    27: 169,
+    26: 167,
+    25: 164,
+    24: 162,
+    23: 160,
+    22: 157,
+    21: 154,
+    20: 151,
+    19: 148,
+    18: 145,
+    17: 142,
+    16: 134,
+    15: 125,
+    14: 117,
+    13: 109,
+    12: 100,
+    11: 92,
+    10: 84,
+    9: 75,
+    8: 67,
+    7: 58,
+    6: 50,
+    5: 42,
+    4: 33,
+    3: 25,
+    2: 17,
+    1: 8,
+    0: 0
+};
+
+caeUse = {
+    28: 210,
+    27: 208,
+    26: 206,
+    25: 204,
+    24: 202,
+    23: 200,
+    22: 197,
+    21: 194,
+    20: 191,
+    19: 189,
+    18: 186,
+    17: 183,
+    16: 180,
+    15: 176,
+    14: 172,
+    13: 168,
+    12: 164,
+    11: 160,
+    10: 154,
+    9: 148,
+    8: 142,
+    7: 124,
+    6: 107,
+    5: 89,
+    4: 71,
+    3: 53,
+    2: 36,
+    1: 18,
+    0: 0
+};
+
+caeWriting = {
+    40: 210,
+    39: 208,
+    38: 207,
+    37: 205,
+    36: 203,
+    35: 202,
+    34: 200,
+    33: 198,
+    32: 196,
+    31: 194,
+    30: 192,
+    29: 190,
+    28: 188,
+    27: 186,
+    26: 184,
+    25: 182,
+    24: 180,
+    23: 178,
+    22: 175,
+    21: 173,
+    20: 170,
+    19: 168,
+    18: 165,
+    17: 163,
+    16: 160,
+    15: 157,
+    14: 154,
+    13: 151,
+    12: 148,
+    11: 145,
+    10: 142,
+    9: 128,
+    8: 114,
+    7: 99,
+    6: 85,
+    5: 71,
+    4: 57,
+    3: 43,
+    2: 28,
+    1: 14,
+    0: 0
+};
+
+caeSpeaking = {
+    75: 210,
+    74: 209,
+    73: 208,
+    72: 207,
+    71: 206,
+    70: 204,
+    69: 203,
+    68: 202,
+    67: 201,
+    66: 200,
+    65: 199,
+    64: 198,
+    63: 197,
+    62: 196,
+    61: 195,
+    60: 194,
+    59: 193,
+    58: 192,
+    57: 191,
+    56: 190,
+    55: 189,
+    54: 188,
+    53: 187,
+    52: 186,
+    51: 185,
+    50: 184,
+    49: 183,
+    48: 182,
+    47: 181,
+    46: 180,
+    45: 179,
+    44: 177,
+    43: 176,
+    42: 175,
+    41: 173,
+    40: 172,
+    39: 171,
+    38: 169,
+    37: 168,
+    36: 167,
+    35: 165,
+    34: 164,
+    33: 163,
+    32: 161,
+    31: 160,
+    30: 159,
+    29: 157,
+    28: 156,
+    27: 154,
+    26: 153,
+    25: 152,
+    24: 150,
+    23: 149,
+    22: 148,
+    21: 146,
+    20: 145,
+    19: 143,
+    18: 142,
+    17: 134,
+    16: 125,
+    15: 117,
+    14: 109,
+    13: 100,
+    12: 92,
+    11: 84,
+    10: 75,
+    9: 67,
+    8: 58,
+    7: 50,
+    6: 42,
+    5: 33,
+    4: 25,
+    3: 17,
+    2: 8,
+    1: 1,
+    0: 0
+};
+
+function calculateListeningScoreCAE(inputValue) {
+    let result = caeListening[inputValue];
+    if (inputValue > 30) {
+        caeErrorMessaging.textContent = "The max score for CAE Listening cannot exceed 30 points.";
+        result = "Error";
+    } 
+    return result;
+}
+
+function calculateReadingScoreCAE(inputValue) {
+    let result = caeReading[inputValue];
+    if (inputValue > 50) {
+        fceErrorMessaging.textContent = "The max score for CAE Reading cannot exceed 50 points.";
+        result = "Error";
+    } 
+    return result;
+}
+
+function calculateUseScoreCAE(inputValue) {
+    let result = caeUse[inputValue];
+    if (inputValue > 28) {
+        fceErrorMessaging.textContent = "The max score for CAE Use of English cannot exceed 28 points.";
+        result = "Error";
+    } 
+    return result;
+}
+
+function calculateWritingScoreCAE(inputValue) {
+    let result = caeWriting[inputValue];
+    if (inputValue > 40) {
+        caeErrorMessaging.textContent = "The max score for CAE Writing cannot exceed 40 points.";
+        result = "Error";
+    } 
+    return result;
+}
+
+function calculateSpeakingScoreCAE(inputValue) {
+    let result = caeSpeaking[inputValue];
+    if (inputValue > 75) {
+        caeErrorMessaging.textContent = "The max score for CAE Speaking cannot exceed 75 points.";
+        result = "Error";
+    } 
+    return result;
+}
+
+calculateCAE.addEventListener('click', function () {
+    const resultListening = calculateListeningScoreCAE(Number(listeningCAEInput.value));
+    const resultReading = calculateReadingScoreCAE(Number(readingCAEInput.value));
+    const resultUse = calculateUseScoreCAE(Number(useCAEInput.value));
+    const resultWriting = calculateWritingScoreCAE(Number(writingCAEInput.value));
+    const resultSpeaking = calculateSpeakingScoreCAE(Number(speakingCAEInput.value));
+
+    listeningCAEResult.textContent = resultListening;
+    readingCAEResult.textContent = resultReading;
+    useCAEResult.textContent = resultUse;
+    writingCAEResult.textContent = resultWriting;
+    speakingCAEResult.textContent = resultSpeaking;
+
+    const averageCAEResult = Math.round((0.20 * resultListening) + (0.20 * resultReading) + (0.20 * resultUse) + (0.20 * resultWriting) + (0.20 * resultSpeaking));
+    averageScoreCAE.textContent = averageCAEResult;
+
+    if (averageCAEResult >= 200) {
+        gradeCAE.textContent = "Grade A (C2 level)";
+    }
+    else if (averageCAEResult >= 193) {
+        gradeCAE.textContent = "Grade B (C1 level)";
+    }
+    else if (averageCAEResult >= 180) {
+        gradeCAE.textContent = "Grade C (C1 level)";
+    }
+    else if (averageCAEResult >= 160) {
+        gradeCAE.textContent = "B2 level";
+    }
+    else if (averageCAEResult >= 140) {
+        gradeCAE.textContent = "B1 level";
+    }
+    else if (averageCAEResult >= 120) {
+        gradeCAE.textContent = "A2 level";
+    }
+    else {
+        gradeCAE.textContent = "A1 level";
+    }
+});
+
+//CAE SECTION END

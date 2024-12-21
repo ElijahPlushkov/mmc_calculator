@@ -14,6 +14,9 @@
         .hiddenFCE {
             display: none;
         }
+        .hiddenCAE {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -154,6 +157,55 @@
     </table>
 </div>
 <!-- FCE SECTION END -->
+
+<!--CAE SECTION START-->
+<div id="parametersCAE" class="hiddenCAE">
+    <h2>CAE</h2>
+    <label>Listening</label>
+    <input type="number" id="listeningCAEInput"><br>
+    <label>Reading</label>
+    <input type="number" id="readingCAEInput"><br>
+    <label>Use of English</label>
+    <input type="number" id="useCAEInput"><br>
+    <label>Writing</label>
+    <input type="number" id="writingCAEInput"><br>
+    <label>Speaking</label>
+    <input type="number" id="speakingCAEInput"><br>
+    <br>
+    <p id="caeErrorMessaging"></p>
+    <br>
+    <button type="submit" id="calculateCAE">Calculate</button>
+    <br>
+    <br>
+    <table border="1" id="caeResults">
+        <tr>
+            <td>Average Score</td>
+            <td id="averageScoreCAE">140</td>
+            <td id="gradeCAE">A2 Grade A</td>
+        </tr>
+        <tr>
+            <td>Listening</td>
+            <td id="listeningCAEResult">140</td>
+        </tr>
+        <tr>
+            <td>Reading</td>
+            <td id="readingCAEResult">150</td>
+        </tr>
+        <tr>
+            <td>Use of English</td>
+            <td id="useCAEResult">150</td>
+        </tr>
+        <tr>
+            <td>Writing</td>
+            <td id="writingCAEResult">150</td>
+        </tr>
+        <tr>
+            <td>Speaking</td>
+            <td id="speakingCAEResult">160</td>
+        </tr>
+    </table>
+</div>
+<!--CAE SECTION END-->
 <script src="index.js"></script>
 </body>
 </html>
