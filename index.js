@@ -1,3 +1,12 @@
+//STATERS SECTION START
+const selectSt = document.getElementById("selectSt");
+const parametersSt = document.getElementById("parametersSt");
+
+selectSt.addEventListener('click', function () {
+    parametersSt.classList.toggle("hiddenSt");
+});
+//STARTERS SECTION END
+
 //KET SECTION START
 
 const selectKet = document.getElementById("selectKet");
@@ -136,20 +145,26 @@ ketSpeaking = {
     17: 98,
     16: 96,
     15: 93,
-    14: 90,
-    13: 87,
-    12: 74,
-    11: 62,
-    10: 49,
-    9: 37,
-    8: 25,
-    7: 12,
+    14: 91,
+    13: 89,
+    12: 87,
+    11: 84,
+    10: 82,
+    9: 74,
+    8: 66,
+    7: 57,
+    6: 49,
+    5: 41,
+    4: 33,
+    3: 25,
+    2: 16,
+    1: 8,
     0: 0
 };
 
 function calculateListeningScoreKet(inputValue) {
     let result = ketListening[inputValue];
-    if (inputValue >= 26) {
+    if (inputValue > 25) {
         ketErrorMessaging.textContent = "The max score for KET Listening cannot exceed 25 points.";
         result = "Error";
     }
@@ -161,7 +176,7 @@ function calculateReadingWritingScoreKet(inputValue) {
     if (inputValue < 12) {
         result = 0;
     }
-    else if (inputValue >= 61) {
+    else if (inputValue > 60) {
         ketErrorMessaging.textContent = "The max score for KET Reading&Writing cannot exceed 60 points.";
         result = "Error";
     }
@@ -170,10 +185,7 @@ function calculateReadingWritingScoreKet(inputValue) {
 
 function calculateSpeakingScoreKet(inputValue) {
     let result = ketSpeaking[inputValue];
-    if (inputValue < 7) {
-        result = 0;
-    }
-    else if (inputValue >= 46) {
+    if (inputValue > 45) {
         ketErrorMessaging.textContent = "The max score for KET Speaking cannot exceed 45 points.";
         result = "Error";
     }

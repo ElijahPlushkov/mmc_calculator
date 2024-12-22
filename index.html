@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MMC Cambridge Score Calculator</title>
     <style>
+        .hiddenSt {
+            display: none;
+        }
+        .hiddenMov {
+            display: none;
+        }
+        .hiddenFl {
+            display: none;
+        }
         .hiddenKet {
             display: none;
         }
@@ -17,17 +26,64 @@
         .hiddenCAE {
             display: none;
         }
+        .hiddenCPE {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <h1>MMC Cambridge Score Calculator</h1>
     <h2>Select an exam</h2>
+    <button id="selectSt">Starters</button>
+    <button id="selectMov">Movers</button>
+    <button id="selectFl">Flyers</button>
     <button id="selectKet">KET</button>
     <button id="selectPet">PET</button>
     <button id="selectFCE">FCE</button>
     <button id="selectCAE">CAE</button>
+    <button id="selectCPE">CPE</button>
     <br>
     <br>
+
+<!--STATERS SECTION START-->
+<div id="parametersSt" class="hiddenSt">
+    <h2>STARTERS</h2>
+    <label>Listening</label>
+    <input type="number" id="listeningStInput"><br>
+    <label>Reading and Writing</label>
+    <input type="number" id="readingWritingStInput"><br>
+    <label>Speaking</label>
+    <input type="number" id="speakingStInput"><br>
+    <br>
+    <p id="stErrorMessaging"></p>
+    <br>
+    <button type="submit" id="calculateSt">Calculate</button>
+    <br>
+    <br>
+    <table border="1" id="stResults">
+        <tr>
+            <td>Result:</td>
+            <td id="gradeSt">Pass</td>
+            <td>Number of Shields</td>
+        </tr>
+        <tr>
+            <td>Listening</td>
+            <td id="listeningStResult"></td>
+            <td id="listeningStResultShields"></td>
+        </tr>
+        <tr>
+            <td>Reading and Writing</td>
+            <td id="readingWritingStResult"></td>
+            <td id="readingWritingStResultShields"></td>
+        </tr>
+        <tr>
+            <td>Speaking</td>
+            <td id="speakingStResult"></td>
+            <td id="speakingStResultShields"></td>
+        </tr>
+    </table>
+</div>
+<!--STATERS SECTION END-->
 
 <!-- KET SECTION START -->
 <div id="parametersKet" class="hiddenKet">
