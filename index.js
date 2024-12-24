@@ -5,6 +5,70 @@ const parametersSt = document.getElementById("parametersSt");
 selectSt.addEventListener('click', function () {
     parametersSt.classList.toggle("hiddenSt");
 });
+
+const calculateSt = document.getElementById("calculateSt");
+const listeningStInput = document.getElementById("listeningStInput").value;
+const readingWritingStInput = document.getElementById("readingWritingStInput").value;
+const speakingStInput = document.getElementById("speakingStInput").value;
+
+const stErrorMessaging = document.getElementById("stErrorMessaging");
+
+const gradeSt = document.getElementById("gradeSt");
+
+const listeningStResult = document.getElementById("listeningStResult");
+const listeningStResultShields = document.getElementById("listeningStResultShields");
+
+const readingWritingStResult = document.getElementById("readingWritingStResult");
+const readingWritingStResultShields=document.getElementById("readingWritingStResultShields");
+
+const speakingStResult = document.getElementById("speakingStResult");
+const speakingStResultShields = document.getElementById("speakingStResultShields");
+
+function calculateListeningScoreSt(listeningStInput){
+    listeningStInput = Number(listeningStInput);
+    if (listeningStInput >= 18) {
+        readingWritingStResult.textContent = listeningStInput;
+        listeningStResultShields.textContent = "5";
+    } 
+    else if (listeningStInput >= 16) {
+        readingWritingStResult.textContent = listeningStInput;
+        listeningStResultShields.textContent = "4";
+    } 
+    else if (listeningStInput >= 13) {
+        readingWritingStResult.textContent = listeningStInput;
+        listeningStResultShields.textContent = "3";
+    } 
+    else if (listeningStInput >= 11) {
+        readingWritingStResult.textContent = listeningStInput;
+        listeningStResultShields.textContent = "2";
+    } 
+    else {
+        readingWritingStResult.textContent = listeningStInput;
+        listeningStResultShields.textContent = "1";
+    }
+}
+
+//ai suggestion
+// function calculateListeningScoreSt(listeningStInput) {
+//     listeningStInput = Number(listeningStInput);
+
+//     const thresholds = [
+//         { threshold: 18, shields: "5" },
+//         { threshold: 16, shields: "4" },
+//         { threshold: 13, shields: "3" },
+//         { threshold: 11, shields: "2" },
+//         { threshold: 0, shields: "1" }, // Default case - important!
+//     ];
+
+//     for (const item of thresholds) {
+//         if (listeningStInput >= item.threshold) {
+//             readingWritingStResult.textContent = listeningStInput;
+//             listeningStResultShields.textContent = item.shields;
+//             return; // Exit the function once a match is found
+//         }
+//     }
+// }
+
 //STARTERS SECTION END
 
 //KET SECTION START
