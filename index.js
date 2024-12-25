@@ -2,14 +2,10 @@
 const selectSt = document.getElementById("selectSt");
 const parametersSt = document.getElementById("parametersSt");
 
-selectSt.addEventListener('click', function () {
-    parametersSt.classList.toggle("hiddenSt");
-});
-
 const calculateSt = document.getElementById("calculateSt");
-const listeningStInput = document.getElementById("listeningStInput").value;
-const readingWritingStInput = document.getElementById("readingWritingStInput").value;
-const speakingStInput = document.getElementById("speakingStInput").value;
+const listeningStInput = document.getElementById("listeningStInput");
+const readingWritingStInput = document.getElementById("readingWritingStInput");
+const speakingStInput = document.getElementById("speakingStInput");
 
 const stErrorMessaging = document.getElementById("stErrorMessaging");
 
@@ -24,50 +20,117 @@ const readingWritingStResultShields=document.getElementById("readingWritingStRes
 const speakingStResult = document.getElementById("speakingStResult");
 const speakingStResultShields = document.getElementById("speakingStResultShields");
 
-function calculateListeningScoreSt(listeningStInput){
+selectSt.addEventListener('click', function () {
+    parametersSt.classList.toggle("hiddenSt");
+});
+
+function calculateListeningScoreSt(listeningStInput) {
     listeningStInput = Number(listeningStInput);
-    if (listeningStInput >= 18) {
-        readingWritingStResult.textContent = listeningStInput;
-        listeningStResultShields.textContent = "5";
-    } 
-    else if (listeningStInput >= 16) {
-        readingWritingStResult.textContent = listeningStInput;
-        listeningStResultShields.textContent = "4";
-    } 
-    else if (listeningStInput >= 13) {
-        readingWritingStResult.textContent = listeningStInput;
-        listeningStResultShields.textContent = "3";
-    } 
-    else if (listeningStInput >= 11) {
-        readingWritingStResult.textContent = listeningStInput;
-        listeningStResultShields.textContent = "2";
-    } 
-    else {
-        readingWritingStResult.textContent = listeningStInput;
-        listeningStResultShields.textContent = "1";
+
+    if (listeningStInput > 20) {
+        stErrorMessaging.textContent = "The max score for Starters Listening cannot exceed 20 points.";
+        listeningStResult.textContent = "error";
+        listeningStResultShields.textContent = "";
+        return;
+    }
+
+    stErrorMessaging.textContent = "";
+
+    const thresholds = [
+        { threshold: 18, shields: "5" },
+        { threshold: 16, shields: "4" },
+        { threshold: 13, shields: "3" },
+        { threshold: 11, shields: "2" },
+        { threshold: 0, shields: "1" },
+    ];
+
+    for (const item of thresholds) {
+        if (listeningStInput >= item.threshold) {
+            listeningStResult.textContent = listeningStInput;
+            listeningStResultShields.textContent = item.shields;
+            return;
+        }
     }
 }
 
-//ai suggestion
-// function calculateListeningScoreSt(listeningStInput) {
-//     listeningStInput = Number(listeningStInput);
+function calculateReadingWritingScoreSt(readingWritingStInput) {
+    readingWritingStInput = Number(readingWritingStInput);
 
-//     const thresholds = [
-//         { threshold: 18, shields: "5" },
-//         { threshold: 16, shields: "4" },
-//         { threshold: 13, shields: "3" },
-//         { threshold: 11, shields: "2" },
-//         { threshold: 0, shields: "1" }, // Default case - important!
-//     ];
+    if (readingWritingStInput > 25) {
+        stErrorMessaging.textContent = "The max score for Starters Reading&Writing cannot exceed 25 points.";
+        readingWritingStResult.textContent = "error";
+        readingWritingStResultShields.textContent = "";
+        return;
+    }
 
-//     for (const item of thresholds) {
-//         if (listeningStInput >= item.threshold) {
-//             readingWritingStResult.textContent = listeningStInput;
-//             listeningStResultShields.textContent = item.shields;
-//             return; // Exit the function once a match is found
-//         }
-//     }
-// }
+    stErrorMessaging.textContent = "";
+
+    const thresholds = [
+        { threshold: 21, shields: "5" },
+        { threshold: 19, shields: "4" },
+        { threshold: 16, shields: "3" },
+        { threshold: 13, shields: "2" },
+        { threshold: 0, shields: "1" },
+    ];
+
+    for (const item of thresholds) {
+        if (readingWritingStInput >= item.threshold) {
+            readingWritingStResult.textContent = readingWritingStInput;
+            readingWritingStResultShields.textContent = item.shields;
+            return;
+        }
+    }
+}
+
+function calculateSpeakingScoreSt(speakingStInput) {
+    speakingStInput = Number(speakingStInput);
+
+    if (speakingStInput > 15) {
+        stErrorMessaging.textContent = "The max score for Starters Speaking cannot exceed 15 points.";
+        speakingStResult.textContent = "error";
+        speakingStResultShields.textContent = "";
+        return;
+    }
+
+    stErrorMessaging.textContent = "";
+
+    const thresholds = [
+        { threshold: 13, shields: "5" },
+        { threshold: 10, shields: "4" },
+        { threshold: 7, shields: "3" },
+        { threshold: 4, shields: "2" },
+        { threshold: 0, shields: "1" },
+    ];
+
+    for (const item of thresholds) {
+        if (speakingStInput >= item.threshold) {
+            speakingStResult.textContent = speakingStInput;
+            speakingStResultShields.textContent = item.shields;
+            return;
+        }
+    }
+}
+
+calculateSt.addEventListener("click", function () {
+
+    calculateListeningScoreSt(listeningStInput.value);
+    calculateReadingWritingScoreSt(readingWritingStInput.value);
+    calculateSpeakingScoreSt(speakingStInput.value);
+    
+    const listeningResult = Number(listeningStResultShields.textContent);
+    const readingWritingResult = Number(readingWritingStResultShields.textContent);
+    const speakingResult = Number(speakingStResultShields.textContent);
+
+    if ((listeningResult + readingWritingResult + speakingResult) >= 10
+        && listeningResult > 2
+        && readingWritingResult > 2
+        && speakingResult > 2) {
+            gradeSt.textContent = "Passed";
+    }
+    else{
+        gradeSt.textContent = "Not passed";
+    }
+});
 
 //STARTERS SECTION END
 
