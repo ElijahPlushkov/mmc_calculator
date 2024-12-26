@@ -85,6 +85,86 @@
 </div>
 <!--STATERS SECTION END-->
 
+<!--MOVERS SECTION START-->
+<div id="parametersMov" class="hiddenMov">
+    <h2>MOVERS</h2>
+    <label>Listening</label>
+    <input type="number" id="listeningMovInput" max="25" min="0"><br>
+    <label>Reading and Writing</label>
+    <input type="number" id="readingWritingMovInput" max="35" min="0"><br>
+    <label>Speaking</label>
+    <input type="number" id="speakingMovInput" max="15" min="0"><br>
+    <br>
+    <p id="movErrorMessaging"></p>
+    <br>
+    <button type="submit" id="calculateMov">Calculate</button>
+    <br>
+    <br>
+    <table border="1" id="movResults">
+        <tr>
+            <td>Result:</td>
+            <td id="gradeMov">Pass</td>
+            <td>Number of Shields</td>
+        </tr>
+        <tr>
+            <td>Listening</td>
+            <td id="listeningMovResult"></td>
+            <td id="listeningMovResultShields"></td>
+        </tr>
+        <tr>
+            <td>Reading and Writing</td>
+            <td id="readingWritingMovResult"></td>
+            <td id="readingWritingMovResultShields"></td>
+        </tr>
+        <tr>
+            <td>Speaking</td>
+            <td id="speakingMovResult"></td>
+            <td id="speakingMovResultShields"></td>
+        </tr>
+    </table>
+</div>
+<!--MOVERS SECTION END-->
+
+<!--FLYERS SECTION START-->
+<div id="parametersFl" class="hiddenFl">
+    <h2>FLYERS</h2>
+    <label>Listening</label>
+    <input type="number" id="listeningFlInput" max="25" min="0"><br>
+    <label>Reading and Writing</label>
+    <input type="number" id="readingWritingFlInput" max="44" min="0"><br>
+    <label>Speaking</label>
+    <input type="number" id="speakingFlInput" max="15" min="0"><br>
+    <br>
+    <p id="flErrorMessaging"></p>
+    <br>
+    <button type="submit" id="calculateFl">Calculate</button>
+    <br>
+    <br>
+    <table border="1" id="flResults">
+        <tr>
+            <td>Result:</td>
+            <td id="gradeFl">Pass</td>
+            <td>Number of Shields</td>
+        </tr>
+        <tr>
+            <td>Listening</td>
+            <td id="listeningFlResult"></td>
+            <td id="listeningFlResultShields"></td>
+        </tr>
+        <tr>
+            <td>Reading and Writing</td>
+            <td id="readingWritingFlResult"></td>
+            <td id="readingWritingFlResultShields"></td>
+        </tr>
+        <tr>
+            <td>Speaking</td>
+            <td id="speakingFlResult"></td>
+            <td id="speakingFlResultShields"></td>
+        </tr>
+    </table>
+</div>
+<!--FLYERS SECTION END-->
+
 <!-- KET SECTION START -->
 <div id="parametersKet" class="hiddenKet">
     <h2>KET</h2>

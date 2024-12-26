@@ -15,7 +15,7 @@ const listeningStResult = document.getElementById("listeningStResult");
 const listeningStResultShields = document.getElementById("listeningStResultShields");
 
 const readingWritingStResult = document.getElementById("readingWritingStResult");
-const readingWritingStResultShields=document.getElementById("readingWritingStResultShields");
+const readingWritingStResultShields = document.getElementById("readingWritingStResultShields");
 
 const speakingStResult = document.getElementById("speakingStResult");
 const speakingStResultShields = document.getElementById("speakingStResultShields");
@@ -116,7 +116,7 @@ calculateSt.addEventListener("click", function () {
     calculateListeningScoreSt(listeningStInput.value);
     calculateReadingWritingScoreSt(readingWritingStInput.value);
     calculateSpeakingScoreSt(speakingStInput.value);
-    
+
     const listeningResult = Number(listeningStResultShields.textContent);
     const readingWritingResult = Number(readingWritingStResultShields.textContent);
     const speakingResult = Number(speakingStResultShields.textContent);
@@ -125,14 +125,286 @@ calculateSt.addEventListener("click", function () {
         && listeningResult > 2
         && readingWritingResult > 2
         && speakingResult > 2) {
-            gradeSt.textContent = "Passed";
+        gradeSt.textContent = "Passed";
     }
-    else{
+    else {
         gradeSt.textContent = "Not passed";
     }
 });
 
 //STARTERS SECTION END
+
+//MOVERS SECTION START
+const selectMov = document.getElementById("selectMov");
+const parametersMov = document.getElementById("parametersMov");
+
+const calculateMov = document.getElementById("calculateMov");
+const listeningMovInput = document.getElementById("listeningMovInput");
+const readingWritingMovInput = document.getElementById("readingWritingMovInput");
+const speakingMovInput = document.getElementById("speakingMovInput");
+
+const movErrorMessaging = document.getElementById("movErrorMessaging");
+
+const gradeMov = document.getElementById("gradeMov");
+
+const listeningMovResult = document.getElementById("listeningMovResult");
+const listeningMovResultShields = document.getElementById("listeningMovResultShields");
+
+const readingWritingMovResult = document.getElementById("readingWritingMovResult");
+const readingWritingMovResultShields = document.getElementById("readingWritingMovResultShields");
+
+const speakingMovResult = document.getElementById("speakingMovResult");
+const speakingMovResultShields = document.getElementById("speakingMovResultShields");
+
+selectMov.addEventListener('click', function () {
+    parametersMov.classList.toggle("hiddenMov");
+});
+
+function calculateListeningScoreMov(listeningMovInput) {
+    listeningMovInput = Number(listeningMovInput);
+
+    if (listeningMovInput > 25) {
+        movErrorMessaging.textContent = "The max score for Movers Listening cannot exceed 25 points.";
+        listeningMovResult.textContent = "error";
+        listeningMovResultShields.textContent = "";
+        return;
+    }
+
+    movErrorMessaging.textContent = "";
+
+    const thresholds = [
+        { threshold: 21, shields: "5" },
+        { threshold: 18, shields: "4" },
+        { threshold: 14, shields: "3" },
+        { threshold: 11, shields: "2" },
+        { threshold: 0, shields: "1" },
+    ];
+
+    for (const item of thresholds) {
+        if (listeningMovInput >= item.threshold) {
+            listeningMovResult.textContent = listeningMovInput;
+            listeningMovResultShields.textContent = item.shields;
+            return;
+        }
+    }
+}
+
+function calculateReadingWritingScoreMov(readingWritingMovInput) {
+    readingWritingMovInput = Number(readingWritingMovInput);
+
+    if (readingWritingMovInput > 35) {
+        movErrorMessaging.textContent = "The max score for Movers Reading&Writing cannot exceed 35 points.";
+        readingWritingMovResult.textContent = "error";
+        readingWritingMovResultShields.textContent = "";
+        return;
+    }
+
+    movErrorMessaging.textContent = "";
+
+    const thresholds = [
+        { threshold: 33, shields: "5" },
+        { threshold: 29, shields: "4" },
+        { threshold: 24, shields: "3" },
+        { threshold: 18, shields: "2" },
+        { threshold: 0, shields: "1" },
+    ];
+
+    for (const item of thresholds) {
+        if (readingWritingMovInput >= item.threshold) {
+            readingWritingMovResult.textContent = readingWritingMovInput;
+            readingWritingMovResultShields.textContent = item.shields;
+            return;
+        }
+    }
+}
+
+function calculateSpeakingScoreMov(speakingMovInput) {
+    speakingMovInput = Number(speakingMovInput);
+
+    if (speakingMovInput > 15) {
+        movErrorMessaging.textContent = "The max score for Movers Speaking cannot exceed 15 points.";
+        speakingMovResult.textContent = "error";
+        speakingMovResultShields.textContent = "";
+        return;
+    }
+
+    movErrorMessaging.textContent = "";
+
+    const thresholds = [
+        { threshold: 13, shields: "5" },
+        { threshold: 10, shields: "4" },
+        { threshold: 7, shields: "3" },
+        { threshold: 4, shields: "2" },
+        { threshold: 0, shields: "1" },
+    ];
+
+    for (const item of thresholds) {
+        if (speakingMovInput >= item.threshold) {
+            speakingMovResult.textContent = speakingMovInput;
+            speakingMovResultShields.textContent = item.shields;
+            return;
+        }
+    }
+}
+
+calculateMov.addEventListener("click", function () {
+
+    calculateListeningScoreMov(listeningMovInput.value);
+    calculateReadingWritingScoreMov(readingWritingMovInput.value);
+    calculateSpeakingScoreMov(speakingMovInput.value);
+
+    const listeningResult = Number(listeningMovResultShields.textContent);
+    const readingWritingResult = Number(readingWritingMovResultShields.textContent);
+    const speakingResult = Number(speakingMovResultShields.textContent);
+
+    if ((listeningResult + readingWritingResult + speakingResult) >= 10
+        && listeningResult > 2
+        && readingWritingResult > 2
+        && speakingResult > 2) {
+        gradeMov.textContent = "Passed";
+    }
+    else {
+        gradeMov.textContent = "Not passed";
+    }
+});
+
+//MOVERS SECTION END
+
+//FLYERS SECTION START
+const selectFl = document.getElementById("selectFl");
+const parametersFl = document.getElementById("parametersFl");
+
+const calculateFl = document.getElementById("calculateFl");
+const listeningFlInput = document.getElementById("listeningFlInput");
+const readingWritingFlInput = document.getElementById("readingWritingFlInput");
+const speakingFlInput = document.getElementById("speakingFlInput");
+
+const flErrorMessaging = document.getElementById("flErrorMessaging");
+
+const gradeFl = document.getElementById("gradeFl");
+
+const listeningFlResult = document.getElementById("listeningFlResult");
+const listeningFlResultShields = document.getElementById("listeningFlResultShields");
+
+const readingWritingFlResult = document.getElementById("readingWritingFlResult");
+const readingWritingFlResultShields = document.getElementById("readingWritingFlResultShields");
+
+const speakingFlResult = document.getElementById("speakingFlResult");
+const speakingFlResultShields = document.getElementById("speakingFlResultShields");
+
+selectFl.addEventListener('click', function () {
+    parametersFl.classList.toggle("hiddenFl");
+});
+
+function calculateListeningScoreFl(listeningFlInput) {
+    listeningFlInput = Number(listeningFlInput);
+
+    if (listeningFlInput > 25) {
+        flErrorMessaging.textContent = "The max score for Flyers Listening cannot exceed 25 points.";
+        listeningFlResult.textContent = "error";
+        listeningFlResultShields.textContent = "";
+        return;
+    }
+
+    flErrorMessaging.textContent = "";
+
+    const thresholds = [
+        { threshold: 23, shields: "5" },
+        { threshold: 20, shields: "4" },
+        { threshold: 17, shields: "3" },
+        { threshold: 14, shields: "2" },
+        { threshold: 0, shields: "1" },
+    ];
+
+    for (const item of thresholds) {
+        if (listeningFlInput >= item.threshold) {
+            listeningFlResult.textContent = listeningFlInput;
+            listeningFlResultShields.textContent = item.shields;
+            return;
+        }
+    }
+}
+
+function calculateReadingWritingScoreFl(readingWritingFlInput) {
+    readingWritingFlInput = Number(readingWritingFlInput);
+
+    if (readingWritingFlInput > 44) {
+        flErrorMessaging.textContent = "The max score for Flyers Reading&Writing cannot exceed 44 points.";
+        readingWritingFlResult.textContent = "error";
+        readingWritingFlResultShields.textContent = "";
+        return;
+    }
+
+    flErrorMessaging.textContent = "";
+
+    const thresholds = [
+        { threshold: 42, shields: "5" },
+        { threshold: 36, shields: "4" },
+        { threshold: 30, shields: "3" },
+        { threshold: 24, shields: "2" },
+        { threshold: 0, shields: "1" },
+    ];
+
+    for (const item of thresholds) {
+        if (readingWritingFlInput >= item.threshold) {
+            readingWritingFlResult.textContent = readingWritingFlInput;
+            readingWritingFlResultShields.textContent = item.shields;
+            return;
+        }
+    }
+}
+
+function calculateSpeakingScoreFl(speakingFlInput) {
+    speakingFlInput = Number(speakingFlInput);
+
+    if (speakingFlInput > 15) {
+        flErrorMessaging.textContent = "The max score for Flyers Speaking cannot exceed 15 points.";
+        speakingFlResult.textContent = "error";
+        speakingFlResultShields.textContent = "";
+        return;
+    }
+
+    flErrorMessaging.textContent = "";
+
+    const thresholds = [
+        { threshold: 13, shields: "5" },
+        { threshold: 10, shields: "4" },
+        { threshold: 7, shields: "3" },
+        { threshold: 4, shields: "2" },
+        { threshold: 0, shields: "1" },
+    ];
+
+    for (const item of thresholds) {
+        if (speakingFlInput >= item.threshold) {
+            speakingFlResult.textContent = speakingFlInput;
+            speakingFlResultShields.textContent = item.shields;
+            return;
+        }
+    }
+}
+
+calculateFl.addEventListener("click", function () {
+
+    calculateListeningScoreFl(listeningFlInput.value);
+    calculateReadingWritingScoreFl(readingWritingFlInput.value);
+    calculateSpeakingScoreFl(speakingFlInput.value);
+
+    const listeningResult = Number(listeningFlResultShields.textContent);
+    const readingWritingResult = Number(readingWritingFlResultShields.textContent);
+    const speakingResult = Number(speakingFlResultShields.textContent);
+
+    if ((listeningResult + readingWritingResult + speakingResult) >= 10
+        && listeningResult > 2
+        && readingWritingResult > 2
+        && speakingResult > 2) {
+        gradeFl.textContent = "Passed";
+    }
+    else {
+        gradeFl.textContent = "Not passed";
+    }
+});
+
+//FLYERS SECTION END
 
 //KET SECTION START
 
@@ -521,31 +793,31 @@ function calculateListeningScorePet(inputValue) {
     if (inputValue >= 26) {
         petErrorMessaging.textContent = "The max score for PET Listening cannot exceed 25 points.";
         result = "Error";
-    } 
+    }
     return result;
 }
 
-function calculateReadingScorePet(inputValue){
+function calculateReadingScorePet(inputValue) {
     let result = petReading[inputValue];
-    if(inputValue >= 33) {
+    if (inputValue >= 33) {
         petErrorMessaging.textContent = "The max score for PET Reading cannot exceed 32 points.";
         result = "Error";
     }
     return result;
 }
 
-function calculateWritingScorePet(inputValue){
+function calculateWritingScorePet(inputValue) {
     let result = petWriting[inputValue];
-    if(inputValue >= 41) {
+    if (inputValue >= 41) {
         petErrorMessaging.textContent = "The max score for PET Writing cannot exceed 40 points.";
         result = "Error";
     }
     return result;
 }
 
-function calculateSpeakingScorePet(inputValue){
+function calculateSpeakingScorePet(inputValue) {
     let result = petSpeaking[inputValue];
-    if(inputValue >= 31) {
+    if (inputValue >= 31) {
         petErrorMessaging.textContent = "The max score for PET Speaking cannot exceed 30 points.";
         result = "Error";
     }
@@ -839,7 +1111,7 @@ function calculateListeningScoreFCE(inputValue) {
     if (inputValue > 30) {
         fceErrorMessaging.textContent = "The max score for FCE Listening cannot exceed 30 points.";
         result = "Error";
-    } 
+    }
     return result;
 }
 
@@ -848,7 +1120,7 @@ function calculateReadingScoreFCE(inputValue) {
     if (inputValue > 42) {
         fceErrorMessaging.textContent = "The max score for FCE Reading cannot exceed 42 points.";
         result = "Error";
-    } 
+    }
     return result;
 }
 
@@ -857,7 +1129,7 @@ function calculateUseScoreFCE(inputValue) {
     if (inputValue > 28) {
         fceErrorMessaging.textContent = "The max score for FCE Use of English cannot exceed 28 points.";
         result = "Error";
-    } 
+    }
     return result;
 }
 
@@ -866,7 +1138,7 @@ function calculateWritingScoreFCE(inputValue) {
     if (inputValue > 40) {
         fceErrorMessaging.textContent = "The max score for FCE Writing cannot exceed 40 points.";
         result = "Error";
-    } 
+    }
     return result;
 }
 
@@ -875,7 +1147,7 @@ function calculateSpeakingScoreFCE(inputValue) {
     if (inputValue > 60) {
         fceErrorMessaging.textContent = "The max score for FCE Speaking cannot exceed 60 points.";
         result = "Error";
-    } 
+    }
     return result;
 }
 
@@ -1192,7 +1464,7 @@ function calculateListeningScoreCAE(inputValue) {
     if (inputValue > 30) {
         caeErrorMessaging.textContent = "The max score for CAE Listening cannot exceed 30 points.";
         result = "Error";
-    } 
+    }
     return result;
 }
 
@@ -1201,7 +1473,7 @@ function calculateReadingScoreCAE(inputValue) {
     if (inputValue > 50) {
         fceErrorMessaging.textContent = "The max score for CAE Reading cannot exceed 50 points.";
         result = "Error";
-    } 
+    }
     return result;
 }
 
@@ -1210,7 +1482,7 @@ function calculateUseScoreCAE(inputValue) {
     if (inputValue > 28) {
         fceErrorMessaging.textContent = "The max score for CAE Use of English cannot exceed 28 points.";
         result = "Error";
-    } 
+    }
     return result;
 }
 
@@ -1219,7 +1491,7 @@ function calculateWritingScoreCAE(inputValue) {
     if (inputValue > 40) {
         caeErrorMessaging.textContent = "The max score for CAE Writing cannot exceed 40 points.";
         result = "Error";
-    } 
+    }
     return result;
 }
 
@@ -1228,7 +1500,7 @@ function calculateSpeakingScoreCAE(inputValue) {
     if (inputValue > 75) {
         caeErrorMessaging.textContent = "The max score for CAE Speaking cannot exceed 75 points.";
         result = "Error";
-    } 
+    }
     return result;
 }
 
