@@ -48,39 +48,44 @@
 <!--STATERS SECTION START-->
 <div id="parametersSt" class="hiddenSt">
     <h2>STARTERS</h2>
-    <label>Listening</label>
-    <input type="number" id="listeningStInput" max="20" min="0"><br>
-    <label>Reading and Writing</label>
-    <input type="number" id="readingWritingStInput" max="25" min="0"><br>
-    <label>Speaking</label>
-    <input type="number" id="speakingStInput" max="15" min="0"><br>
+    <label for="listeningStInput">Listening</label>
+    <input type="number" id="listeningStInput" max="20" min="0" step="1" placeholder="0-20"><br>
+    <label for="readingWritingStInput">Reading and Writing</label>
+    <input type="number" id="readingWritingStInput" max="25" min="0" step="1" placeholder="0-25"><br>
+    <label for="speakingStInput">Speaking</label>
+    <input type="number" id="speakingStInput" max="15" min="0" step="1" placeholder="0-15"><br>
     <br>
     <p id="stErrorMessaging"></p>
     <br>
-    <button type="submit" id="calculateSt">Calculate</button>
+    <button type="button" id="calculateSt">Calculate</button>
     <br>
     <br>
     <table border="1" id="stResults">
-        <tr>
-            <td>Result:</td>
-            <td id="gradeSt">Pass</td>
-            <td>Number of Shields</td>
-        </tr>
-        <tr>
-            <td>Listening</td>
-            <td id="listeningStResult"></td>
-            <td id="listeningStResultShields"></td>
-        </tr>
-        <tr>
-            <td>Reading and Writing</td>
-            <td id="readingWritingStResult"></td>
-            <td id="readingWritingStResultShields"></td>
-        </tr>
-        <tr>
-            <td>Speaking</td>
-            <td id="speakingStResult"></td>
-            <td id="speakingStResultShields"></td>
-        </tr>
+        <thead>
+            <tr>
+                <th>Skill</th>
+                <th>Result</th>
+                <th>Number of Shields</th>
+                <th id="gradeSt">Pass/Fail</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Listening</td>
+                <td id="listeningStResult"></td>
+                <td id="listeningStResultShields"></td>
+            </tr>
+            <tr>
+                <td>Reading and Writing</td>
+                <td id="readingWritingStResult"></td>
+                <td id="readingWritingStResultShields"></td>
+            </tr>
+            <tr>
+                <td>Speaking</td>
+                <td id="speakingStResult"></td>
+                <td id="speakingStResultShields"></td>
+            </tr>
+        </tbody>
     </table>
 </div>
 <!--STATERS SECTION END-->
@@ -88,12 +93,12 @@
 <!--MOVERS SECTION START-->
 <div id="parametersMov" class="hiddenMov">
     <h2>MOVERS</h2>
-    <label>Listening</label>
-    <input type="number" id="listeningMovInput" max="25" min="0"><br>
-    <label>Reading and Writing</label>
-    <input type="number" id="readingWritingMovInput" max="35" min="0"><br>
-    <label>Speaking</label>
-    <input type="number" id="speakingMovInput" max="15" min="0"><br>
+    <label for="listeningMovInput">Listening</label>
+    <input type="number" id="listeningMovInput" max="25" min="0" step="1" placeholder="0-25"><br>
+    <label for="readingWritingMovInput">Reading and Writing</label>
+    <input type="number" id="readingWritingMovInput" max="35" min="0" step="1" placeholder="0-35"><br>
+    <label for="speakingMovInput">Speaking</label>
+    <input type="number" id="speakingMovInput" max="15" min="0" step="1" placeholder="0-15"><br>
     <br>
     <p id="movErrorMessaging"></p>
     <br>
@@ -101,26 +106,31 @@
     <br>
     <br>
     <table border="1" id="movResults">
-        <tr>
-            <td>Result:</td>
-            <td id="gradeMov">Pass</td>
-            <td>Number of Shields</td>
-        </tr>
-        <tr>
-            <td>Listening</td>
-            <td id="listeningMovResult"></td>
-            <td id="listeningMovResultShields"></td>
-        </tr>
-        <tr>
-            <td>Reading and Writing</td>
-            <td id="readingWritingMovResult"></td>
-            <td id="readingWritingMovResultShields"></td>
-        </tr>
-        <tr>
-            <td>Speaking</td>
-            <td id="speakingMovResult"></td>
-            <td id="speakingMovResultShields"></td>
-        </tr>
+        <thead>
+            <tr>
+                <th>Skill</th>
+                <th>Result</th>
+                <th>Number of Shields</th>
+                <th id="gradeMov">Pass/Fail</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Listening</td>
+                <td id="listeningMovResult"></td>
+                <td id="listeningMovResultShields"></td>
+            </tr>
+            <tr>
+                <td>Reading and Writing</td>
+                <td id="readingWritingMovResult"></td>
+                <td id="readingWritingMovResultShields"></td>
+            </tr>
+            <tr>
+                <td>Speaking</td>
+                <td id="speakingMovResult"></td>
+                <td id="speakingMovResultShields"></td>
+            </tr>
+        </tbody>
     </table>
 </div>
 <!--MOVERS SECTION END-->
@@ -128,12 +138,12 @@
 <!--FLYERS SECTION START-->
 <div id="parametersFl" class="hiddenFl">
     <h2>FLYERS</h2>
-    <label>Listening</label>
-    <input type="number" id="listeningFlInput" max="25" min="0"><br>
-    <label>Reading and Writing</label>
-    <input type="number" id="readingWritingFlInput" max="44" min="0"><br>
-    <label>Speaking</label>
-    <input type="number" id="speakingFlInput" max="15" min="0"><br>
+    <label for="listeningFlInput">Listening</label>
+    <input type="number" id="listeningFlInput" max="25" min="0" step="1" placeholder="0-25"><br>
+    <label for="readingWritingFlInput">Reading and Writing</label>
+    <input type="number" id="readingWritingFlInput" max="44" min="0" step="1" placeholder="0-44"><br>
+    <label for="speakingFlInput">Speaking</label>
+    <input type="number" id="speakingFlInput" max="15" min="0" step="1" placeholder="0-15"><br>
     <br>
     <p id="flErrorMessaging"></p>
     <br>
@@ -141,11 +151,15 @@
     <br>
     <br>
     <table border="1" id="flResults">
-        <tr>
-            <td>Result:</td>
-            <td id="gradeFl">Pass</td>
-            <td>Number of Shields</td>
-        </tr>
+        <thead>
+            <tr>
+                <th>Skill</th>
+                <th>Result</th>
+                <th>Number of Shields</th>
+                <th id="gradeFl">Pass/Fail</th>
+            </tr>
+        </thead>
+        <tbody>
         <tr>
             <td>Listening</td>
             <td id="listeningFlResult"></td>
@@ -161,6 +175,7 @@
             <td id="speakingFlResult"></td>
             <td id="speakingFlResultShields"></td>
         </tr>
+        </tbody>
     </table>
 </div>
 <!--FLYERS SECTION END-->
@@ -168,12 +183,12 @@
 <!-- KET SECTION START -->
 <div id="parametersKet" class="hiddenKet">
     <h2>KET</h2>
-    <label>Listening</label>
-    <input type="number" id="listeningKetInput"><br>
-    <label>Reading and Writing</label>
-    <input type="number" id="readingWritingKetInput"><br>
-    <label>Speaking</label>
-    <input type="number" id="speakingKetInput"><br>
+    <label for="listeningKetInput">Listening</label>
+    <input type="number" id="listeningKetInput" min="0" max="25" step="1" placeholder="0-25"><br>
+    <label for="readingWritingKetInput">Reading and Writing</label>
+    <input type="number" id="readingWritingKetInput" min="0" max="60" step="1" placeholder="0-60"><br>
+    <label for="speakingKetInput">Speaking</label>
+    <input type="number" id="speakingKetInput" min="0" max="45" step="1" placeholder="0-45"><br>
     <br>
     <p id="ketErrorMessaging"></p>
     <br>
@@ -205,14 +220,14 @@
 <!-- PET SECTION START -->
 <div id="parametersPet" class="hiddenPet">
     <h2>PET</h2>
-    <label>Listening</label>
-    <input type="number" id="listeningPetInput"><br>
-    <label>Reading</label>
-    <input type="number" id="readingPetInput"><br>
-    <label>Writing</label>
-    <input type="number" id="writingPetInput"><br>
-    <label>Speaking</label>
-    <input type="number" id="speakingPetInput"><br>
+    <label for="listeningPetInput">Listening</label>
+    <input type="number" id="listeningPetInput" min="0" max="25" step="1" placeholder="0-25"><br>
+    <label for="readingPetInput">Reading</label>
+    <input type="number" id="readingPetInput" min="0" max="32" step="1" placeholder="0-32"><br>
+    <label for="writingPetInput">Writing</label>
+    <input type="number" id="writingPetInput" min="0" max="40" step="1" placeholder="0-40"><br>
+    <label for="speakingPetInput">Speaking</label>
+    <input type="number" id="speakingPetInput" min="0" max="30" step="1" placeholder="0-30"><br>
     <br>
     <p id="petErrorMessaging"></p>
     <br>
@@ -248,16 +263,16 @@
 <!-- FCE SECTION START -->
 <div id="parametersFCE" class="hiddenFCE">
     <h2>FCE</h2>
-    <label>Listening</label>
-    <input type="number" id="listeningFCEInput"><br>
-    <label>Reading</label>
-    <input type="number" id="readingFCEInput"><br>
-    <label>Use of English</label>
-    <input type="number" id="useFCEInput"><br>
-    <label>Writing</label>
-    <input type="number" id="writingFCEInput"><br>
-    <label>Speaking</label>
-    <input type="number" id="speakingFCEInput"><br>
+    <label for="listeningFCEInput">Listening</label>
+    <input type="number" id="listeningFCEInput" min="0" max="30" step="1" placeholder="0-30"><br>
+    <label for="readingFCEInput">Reading</label>
+    <input type="number" id="readingFCEInput" min="0" max="42" step="1" placeholder="0-42"><br>
+    <label for="useFCEInput">Use of English</label>
+    <input type="number" id="useFCEInput" min="0" max="28" step="1" placeholder="0-28"><br>
+    <label for="writingFCEInput">Writing</label>
+    <input type="number" id="writingFCEInput" min="0" max="40" step="1" placeholder="0-40"><br>
+    <label for="speakingFCEInput">Speaking</label>
+    <input type="number" id="speakingFCEInput" min="0" max="60" step="1" placeholder="0-60"><br>
     <br>
     <p id="fceErrorMessaging"></p>
     <br>
@@ -297,16 +312,16 @@
 <!--CAE SECTION START-->
 <div id="parametersCAE" class="hiddenCAE">
     <h2>CAE</h2>
-    <label>Listening</label>
-    <input type="number" id="listeningCAEInput"><br>
-    <label>Reading</label>
-    <input type="number" id="readingCAEInput"><br>
-    <label>Use of English</label>
-    <input type="number" id="useCAEInput"><br>
-    <label>Writing</label>
-    <input type="number" id="writingCAEInput"><br>
-    <label>Speaking</label>
-    <input type="number" id="speakingCAEInput"><br>
+    <label for="listeningCAEInput">Listening</label>
+    <input type="number" id="listeningCAEInput" min="0" max="60" step="1" placeholder="0-30"><br>
+    <label for="readingCAEInput">Reading</label>
+    <input type="number" id="readingCAEInput" min="0" max="50" step="1" placeholder="0-50"><br>
+    <label for="useCAEInput">Use of English</label>
+    <input type="number" id="useCAEInput" min="0" max="28" step="1" placeholder="0-28"><br>
+    <label for="writingCAEInput">Writing</label>
+    <input type="number" id="writingCAEInput" min="0" max="40" step="1" placeholder="0-40"><br>
+    <label for="speakingCAEInput">Speaking</label>
+    <input type="number" id="speakingCAEInput" min="0" max="75" step="1" placeholder="0-75"><br>
     <br>
     <p id="caeErrorMessaging"></p>
     <br>
