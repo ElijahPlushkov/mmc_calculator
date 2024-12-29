@@ -4,86 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MMC Cambridge Score Calculator</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        .hiddenSt {
-            display: none;
-        }
-        .hiddenMov {
-            display: none;
-        }
-        .hiddenFl {
-            display: none;
-        }
-        .hiddenKet {
-            display: none;
-        }
-        .hiddenPet {
-            display: none;
-        }
-        .hiddenFCE {
-            display: none;
-        }
-        .hiddenCAE {
-            display: none;
-        }
-        .hiddenCPE {
-            display: none;
-        }
+       
     </style>
 </head>
 <body>
-    <h1>MMC Cambridge Score Calculator</h1>
-    <h2>Select an exam</h2>
-    <button id="selectSt">Starters</button>
-    <button id="selectMov">Movers</button>
-    <button id="selectFl">Flyers</button>
-    <button id="selectKet">KET</button>
-    <button id="selectPet">PET</button>
-    <button id="selectFCE">FCE</button>
-    <button id="selectCAE">CAE</button>
-    <button id="selectCPE">CPE</button>
+    <h1 class="title">MMC Cambridge Score Calculator</h1>
+    
+    <h2 class="subtitle">Select an exam</h2>
+
+    <div class="btnContainer">
+    <button id="selectSt" class="selectBtn">Starters</button>
+    <button id="selectMov" class="selectBtn">Movers</button>
+    <button id="selectFl" class="selectBtn">Flyers</button>
+    <button id="selectKet" class="selectBtn">KET</button>
+    <button id="selectPet" class="selectBtn">PET</button>
+    <button id="selectFCE" class="selectBtn">FCE</button>
+    <button id="selectCAE" class="selectBtn">CAE</button>
+    <!-- <button id="selectCPE">CPE</button> -->
+    </div>
     <br>
     <br>
 
 <!--STATERS SECTION START-->
 <div id="parametersSt" class="hiddenSt">
-    <h2>STARTERS</h2>
-    <label for="listeningStInput">Listening</label>
+    <h3>STARTERS</h3>
+    <div class="yleContainer">
+
+    <div class="inputContainer">
+    <label for="listeningStInput">Listening</label><br>
+    <label for="readingWritingStInput">Reading and Writing</label><br>
+    <label for="speakingStInput">Speaking</label><br>
+    </div>
+
+    <div class="labelContainer">
     <input type="number" id="listeningStInput" max="20" min="0" step="1" placeholder="0-20"><br>
-    <label for="readingWritingStInput">Reading and Writing</label>
     <input type="number" id="readingWritingStInput" max="25" min="0" step="1" placeholder="0-25"><br>
-    <label for="speakingStInput">Speaking</label>
     <input type="number" id="speakingStInput" max="15" min="0" step="1" placeholder="0-15"><br>
-    <br>
-    <p id="stErrorMessaging"></p>
-    <br>
+    </div>
+
+    </div>
+    <p id="stErrorMessaging" class="errorMessage"></p>
     <button type="button" id="calculateSt">Calculate</button>
     <br>
     <br>
     <table border="1" id="stResults">
         <thead>
             <tr>
-                <th>Skill</th>
-                <th>Result</th>
-                <th>Number of Shields</th>
-                <th id="gradeSt">Pass/Fail</th>
+                <th></th>
+                <th>Listening</th>
+                <th>Reading and Writing</th>
+                <th>Speaking</th>
+                <th>Pass/Fail</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Listening</td>
+                <td>Result</td>
                 <td id="listeningStResult"></td>
-                <td id="listeningStResultShields"></td>
-            </tr>
-            <tr>
-                <td>Reading and Writing</td>
                 <td id="readingWritingStResult"></td>
-                <td id="readingWritingStResultShields"></td>
+                <td id="speakingStResult"></td>
+                <td id="gradeSt"></td>
             </tr>
             <tr>
-                <td>Speaking</td>
-                <td id="speakingStResult"></td>
+                <td>Number of Shields</td>
+                <td id="listeningStResultShields"></td>
+                <td id="readingWritingStResultShields"></td>
                 <td id="speakingStResultShields"></td>
+                <td id="shieldSumSt"></td>
             </tr>
         </tbody>
     </table>

@@ -1,0 +1,78 @@
+.title {
+    text-align: center;
+    font-size: 40;
+}
+
+.subtitle {
+    margin-top: 25px;
+    margin-left: 50px;
+    font-size: 24px;
+}
+
+.btnContainer {
+    display: flex;
+    gap: 30px;
+    margin-left: 50px;
+}
+
+.hiddenSt {
+    display: none;
+}
+
+#parametersSt {
+    margin-left: 50px;
+}
+
+.hiddenMov {
+    display: none;
+}
+.hiddenFl {
+    display: none;
+}
+.hiddenKet {
+    display: none;
+}
+.hiddenPet {
+    display: none;
+}
+.hiddenFCE {
+    display: none;
+}
+.hiddenCAE {
+    display: none;
+}
+/* .hiddenCPE {
+    display: none;
+} */
+
+.selectBtn {
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    border: solid 1px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.selectBtn:hover{
+    background-color: rgb(175, 175, 175);
+}
+
+.yleContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+label {
+    font-size: 18px;
+}
+
+input {
+    width: 100px;
+}
+
+.errorMessage {
+    font-size: 18px;
+    color: red;
+}
