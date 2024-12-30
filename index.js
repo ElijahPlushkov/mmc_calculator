@@ -1,3 +1,25 @@
+//HOTKEY BINDINGS
+// This section contains the keybindings used across the entire webpage.
+// Specific hotkeys can be found in their respective sections.
+
+document.addEventListener('keydown', function (event) {
+    if (event.key === 'l') {
+        const listeningLabels = document.querySelectorAll('.listeningLabels');
+        if (listeningLabels.length > 0) {
+            listeningLabels[0].focus();
+        }
+    }
+});
+
+document.addEventListener('keydown', function (event) {
+    if (event.code === 'Enter') {
+        const calculateBtn = document.querySelectorAll('.calculateBtn');
+        if (calculateBtn.length > 0) {
+            calculateBtn[0].focus();
+        }
+    }
+});
+
 //STATERS SECTION START
 const selectSt = document.getElementById("selectSt");
 const parametersSt = document.getElementById("parametersSt");
@@ -19,6 +41,16 @@ const readingWritingStResultShields = document.getElementById("readingWritingStR
 
 const speakingStResult = document.getElementById("speakingStResult");
 const speakingStResultShields = document.getElementById("speakingStResultShields");
+const shieldSumSt = document.getElementById("shieldSumSt");
+
+document.addEventListener('keydown', function (event) {
+    if (event.code === 'KeyS') {
+        const stBtn = document.getElementById('selectSt');
+        if (stBtn) {
+            stBtn.click();
+        }
+    }
+});
 
 selectSt.addEventListener('click', function () {
     parametersSt.classList.toggle("hiddenSt");
@@ -41,7 +73,8 @@ function calculateListeningScoreSt(listeningStInput) {
         { threshold: 16, shields: "4" },
         { threshold: 13, shields: "3" },
         { threshold: 11, shields: "2" },
-        { threshold: 0, shields: "1" },
+        { threshold: 1, shields: "1" },
+        { threshold: 0, shields: "0" },
     ];
 
     for (const item of thresholds) {
@@ -70,7 +103,8 @@ function calculateReadingWritingScoreSt(readingWritingStInput) {
         { threshold: 19, shields: "4" },
         { threshold: 16, shields: "3" },
         { threshold: 13, shields: "2" },
-        { threshold: 0, shields: "1" },
+        { threshold: 1, shields: "1" },
+        { threshold: 0, shields: "0" },
     ];
 
     for (const item of thresholds) {
@@ -99,7 +133,8 @@ function calculateSpeakingScoreSt(speakingStInput) {
         { threshold: 10, shields: "4" },
         { threshold: 7, shields: "3" },
         { threshold: 4, shields: "2" },
-        { threshold: 0, shields: "1" },
+        { threshold: 1, shields: "1" },
+        { threshold: 0, shields: "0" },
     ];
 
     for (const item of thresholds) {
@@ -120,6 +155,8 @@ calculateSt.addEventListener("click", function () {
     const listeningResult = Number(listeningStResultShields.textContent);
     const readingWritingResult = Number(readingWritingStResultShields.textContent);
     const speakingResult = Number(speakingStResultShields.textContent);
+
+    shieldSumSt.textContent = listeningResult + readingWritingResult + speakingResult;
 
     if ((listeningResult + readingWritingResult + speakingResult) >= 10
         && listeningResult > 2
