@@ -2,21 +2,22 @@
 // This section contains the keybindings used across the entire webpage.
 // Specific hotkeys can be found in their respective sections.
 
-document.addEventListener('keydown', function (event) {
+document.addEventListener('keydown', function(event) {
     if (event.key === 'l') {
-        const listeningLabels = document.querySelectorAll('.listeningLabels');
-        if (listeningLabels.length > 0) {
-            listeningLabels[0].focus();
-        }
+        const inputs = document.querySelectorAll('.listeningLabels');
+        inputs.forEach(input => {
+            input.focus();
+        });
     }
 });
 
-document.addEventListener('keydown', function (event) {
-    if (event.code === 'Enter') {
-        const calculateBtn = document.querySelectorAll('.calculateBtn');
-        if (calculateBtn.length > 0) {
-            calculateBtn[0].focus();
-        }
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        const buttons = document.querySelectorAll('.calculateBtn');
+        buttons.forEach(button => {
+            button.click();
+        });
+        event.preventDefault();
     }
 });
 
@@ -53,7 +54,7 @@ document.addEventListener('keydown', function (event) {
 });
 
 selectSt.addEventListener('click', function () {
-    parametersSt.classList.toggle("hiddenSt");
+    parametersSt.classList.toggle("hidden");
 });
 
 function calculateListeningScoreSt(listeningStInput) {
@@ -193,8 +194,17 @@ const readingWritingMovResultShields = document.getElementById("readingWritingMo
 const speakingMovResult = document.getElementById("speakingMovResult");
 const speakingMovResultShields = document.getElementById("speakingMovResultShields");
 
+document.addEventListener('keydown', function (event) {
+    if (event.code === 'KeyM') {
+        const movBtn = document.getElementById('selectMov');
+        if (movBtn) {
+            movBtn.click();
+        }
+    }
+});
+
 selectMov.addEventListener('click', function () {
-    parametersMov.classList.toggle("hiddenMov");
+    parametersMov.classList.toggle("hidden");
 });
 
 function calculateListeningScoreMov(listeningMovInput) {
@@ -214,7 +224,8 @@ function calculateListeningScoreMov(listeningMovInput) {
         { threshold: 18, shields: "4" },
         { threshold: 14, shields: "3" },
         { threshold: 11, shields: "2" },
-        { threshold: 0, shields: "1" },
+        { threshold: 1, shields: "1" },
+        { threshold: 0, shields: "0" },
     ];
 
     for (const item of thresholds) {
@@ -243,7 +254,8 @@ function calculateReadingWritingScoreMov(readingWritingMovInput) {
         { threshold: 29, shields: "4" },
         { threshold: 24, shields: "3" },
         { threshold: 18, shields: "2" },
-        { threshold: 0, shields: "1" },
+        { threshold: 1, shields: "1" },
+        { threshold: 0, shields: "0" },
     ];
 
     for (const item of thresholds) {
@@ -272,7 +284,8 @@ function calculateSpeakingScoreMov(speakingMovInput) {
         { threshold: 10, shields: "4" },
         { threshold: 7, shields: "3" },
         { threshold: 4, shields: "2" },
-        { threshold: 0, shields: "1" },
+        { threshold: 1, shields: "1" },
+        { threshold: 0, shields: "0" },
     ];
 
     for (const item of thresholds) {
@@ -293,6 +306,8 @@ calculateMov.addEventListener("click", function () {
     const listeningResult = Number(listeningMovResultShields.textContent);
     const readingWritingResult = Number(readingWritingMovResultShields.textContent);
     const speakingResult = Number(speakingMovResultShields.textContent);
+
+    shieldSumMov.textContent = listeningResult + readingWritingResult + speakingResult;
 
     if ((listeningResult + readingWritingResult + speakingResult) >= 10
         && listeningResult > 2
@@ -329,8 +344,17 @@ const readingWritingFlResultShields = document.getElementById("readingWritingFlR
 const speakingFlResult = document.getElementById("speakingFlResult");
 const speakingFlResultShields = document.getElementById("speakingFlResultShields");
 
+document.addEventListener('keydown', function (event) {
+    if (event.code === 'KeyF') {
+        const flBtn = document.getElementById('selectFl');
+        if (flBtn) {
+            flBtn.click();
+        }
+    }
+});
+
 selectFl.addEventListener('click', function () {
-    parametersFl.classList.toggle("hiddenFl");
+    parametersFl.classList.toggle("hidden");
 });
 
 function calculateListeningScoreFl(listeningFlInput) {
@@ -350,7 +374,8 @@ function calculateListeningScoreFl(listeningFlInput) {
         { threshold: 20, shields: "4" },
         { threshold: 17, shields: "3" },
         { threshold: 14, shields: "2" },
-        { threshold: 0, shields: "1" },
+        { threshold: 1, shields: "1" },
+        { threshold: 0, shields: "0" },
     ];
 
     for (const item of thresholds) {
@@ -379,7 +404,8 @@ function calculateReadingWritingScoreFl(readingWritingFlInput) {
         { threshold: 36, shields: "4" },
         { threshold: 30, shields: "3" },
         { threshold: 24, shields: "2" },
-        { threshold: 0, shields: "1" },
+        { threshold: 1, shields: "1" },
+        { threshold: 0, shields: "0" },
     ];
 
     for (const item of thresholds) {
@@ -408,7 +434,8 @@ function calculateSpeakingScoreFl(speakingFlInput) {
         { threshold: 10, shields: "4" },
         { threshold: 7, shields: "3" },
         { threshold: 4, shields: "2" },
-        { threshold: 0, shields: "1" },
+        { threshold: 1, shields: "1" },
+        { threshold: 0, shields: "0" },
     ];
 
     for (const item of thresholds) {
@@ -430,6 +457,8 @@ calculateFl.addEventListener("click", function () {
     const readingWritingResult = Number(readingWritingFlResultShields.textContent);
     const speakingResult = Number(speakingFlResultShields.textContent);
 
+    shieldSumFl.textContent = listeningResult + readingWritingResult + speakingResult;
+
     if ((listeningResult + readingWritingResult + speakingResult) >= 10
         && listeningResult > 2
         && readingWritingResult > 2
@@ -448,10 +477,6 @@ calculateFl.addEventListener("click", function () {
 const selectKet = document.getElementById("selectKet");
 const parametersKet = document.getElementById("parametersKet");
 
-selectKet.addEventListener('click', function () {
-    parametersKet.classList.toggle("hiddenKet");
-});
-
 const calculateKet = document.getElementById("calculateKet");
 
 const listeningKetInput = document.getElementById("listeningKetInput");
@@ -467,6 +492,19 @@ const readingWritingKetResult = document.getElementById("readingWritingKetResult
 const speakingKetResult = document.getElementById("speakingKetResult");
 
 const gradeKet = document.getElementById("gradeKet");
+
+document.addEventListener('keydown', function (event) {
+    if (event.code === 'KeyK') {
+        const ketBtn = document.getElementById('selectKet');
+        if (ketBtn) {
+            ketBtn.click();
+        }
+    }
+});
+
+selectKet.addEventListener('click', function () {
+    parametersKet.classList.toggle("hidden");
+});
 
 ketListening = {
     25: 150,
@@ -660,10 +698,6 @@ calculateKet.addEventListener('click', function () {
 const selectPet = document.getElementById("selectPet");
 const parametersPet = document.getElementById("parametersPet");
 
-selectPet.addEventListener('click', function () {
-    parametersPet.classList.toggle("hiddenPet");
-});
-
 const calculatePet = document.getElementById("calculatePet");
 
 const listeningPetInput = document.getElementById("listeningPetInput");
@@ -681,6 +715,19 @@ const writingPetResult = document.getElementById("writingPetResult");
 const speakingPetResult = document.getElementById("speakingPetResult");
 
 const gradePet = document.getElementById("gradePet");
+
+document.addEventListener('keydown', function (event) {
+    if (event.code === 'KeyP') {
+        const petBtn = document.getElementById('selectPet');
+        if (petBtn) {
+            petBtn.click();
+        }
+    }
+});
+
+selectPet.addEventListener('click', function () {
+    parametersPet.classList.toggle("hidden");
+});
 
 petListening = {
     25: 170,
@@ -898,10 +945,6 @@ calculatePet.addEventListener('click', function () {
 const selectFCE = document.getElementById("selectFCE");
 const parametersFCE = document.getElementById("parametersFCE");
 
-selectFCE.addEventListener('click', function () {
-    parametersFCE.classList.toggle("hiddenFCE");
-});
-
 const calculateFCE = document.getElementById("calculateFCE");
 
 const listeningFCEInput = document.getElementById("listeningFCEInput");
@@ -921,6 +964,19 @@ const writingFCEResult = document.getElementById("writingFCEResult");
 const speakingFCEResult = document.getElementById("speakingFCEResult");
 
 const gradeFCE = document.getElementById("gradeFCE");
+
+document.addEventListener('keydown', function (event) {
+    if (event.code === 'KeyE') {
+        const fceBtn = document.getElementById('selectFCE');
+        if (fceBtn) {
+            fceBtn.click();
+        }
+    }
+});
+
+selectFCE.addEventListener('click', function () {
+    parametersFCE.classList.toggle("hidden");
+});
 
 fceListening = {
     30: 190,
@@ -1229,10 +1285,6 @@ calculateFCE.addEventListener('click', function () {
 const selectCAE = document.getElementById("selectCAE");
 const parametersCAE = document.getElementById("parametersCAE");
 
-selectCAE.addEventListener('click', function () {
-    parametersCAE.classList.toggle("hiddenCAE");
-});
-
 const calculateCAE = document.getElementById("calculateCAE");
 
 const listeningCAEInput = document.getElementById("listeningCAEInput");
@@ -1253,6 +1305,18 @@ const speakingCAEResult = document.getElementById("speakingCAEResult");
 
 const gradeCAE = document.getElementById("gradeCAE");
 
+document.addEventListener('keydown', function (event) {
+    if (event.code === 'KeyC') {
+        const caeBtn = document.getElementById('selectCAE');
+        if (caeBtn) {
+            caeBtn.click();
+        }
+    }
+});
+
+selectCAE.addEventListener('click', function () {
+    parametersCAE.classList.toggle("hidden");
+});
 caeListening = {
     30: 210,
     29: 208,

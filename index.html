@@ -1,351 +1,358 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MMC Cambridge Score Calculator</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-       
+
     </style>
 </head>
+
 <body>
     <h1 class="title">MMC Cambridge Score Calculator</h1>
-    
+
     <h2 class="subtitle">Select an exam</h2>
 
     <div class="btnContainer">
-    <button id="selectSt" class="selectBtn">Starters</button>
-    <button id="selectMov" class="selectBtn">Movers</button>
-    <button id="selectFl" class="selectBtn">Flyers</button>
-    <button id="selectKet" class="selectBtn">KET</button>
-    <button id="selectPet" class="selectBtn">PET</button>
-    <button id="selectFCE" class="selectBtn">FCE</button>
-    <button id="selectCAE" class="selectBtn">CAE</button>
-    <!-- <button id="selectCPE">CPE</button> -->
+        <button id="selectSt" class="selectBtn">Starters</button>
+        <button id="selectMov" class="selectBtn">Movers</button>
+        <button id="selectFl" class="selectBtn">Flyers</button>
+        <button id="selectKet" class="selectBtn">KET</button>
+        <button id="selectPet" class="selectBtn">PET</button>
+        <button id="selectFCE" class="selectBtn">FCE</button>
+        <button id="selectCAE" class="selectBtn">CAE</button>
     </div>
     <br>
     <br>
 
-<!--STATERS SECTION START-->
-<div id="parametersSt" class="hiddenSt">
-    <h2>STARTERS</h2>
-    <div class="yleContainer">
+    <!--STATERS SECTION START-->
+    <div id="parametersSt" class="hidden">
+        <h2>STARTERS</h2>
+        <div class="yleContainer">
 
-    <div class="inputContainer">
-    <label for="listeningStInput" class="listeningLabels">Listening</label><br>
-    <label for="readingWritingStInput">Reading and Writing</label><br>
-    <label for="speakingStInput">Speaking</label><br>
+            <div class="labelContainer">
+                <label for="listeningStInput" class="listeningLabels">Listening</label><br>
+                <label for="readingWritingStInput">Reading and Writing</label><br>
+                <label for="speakingStInput">Speaking</label><br>
+            </div>
+
+            <div class="inputContainer">
+                <input type="number" id="listeningStInput" max="20" min="0" step="1" placeholder="0-20"><br>
+                <input type="number" id="readingWritingStInput" max="25" min="0" step="1" placeholder="0-25"><br>
+                <input type="number" id="speakingStInput" max="15" min="0" step="1" placeholder="0-15"><br>
+            </div>
+        </div>
+
+        <p id="stErrorMessaging" class="errorMessage"></p>
+        <button type="button" id="calculateSt" class="calculateBtn">Calculate</button>
+
+        <table class="resultTable" id="stResults">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Listening</th>
+                    <th>Reading and Writing</th>
+                    <th>Speaking</th>
+                    <th>Pass/Fail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Result</td>
+                    <td id="listeningStResult"></td>
+                    <td id="readingWritingStResult"></td>
+                    <td id="speakingStResult"></td>
+                    <td id="gradeSt"></td>
+                </tr>
+                <tr>
+                    <td>Number of Shields</td>
+                    <td id="listeningStResultShields"></td>
+                    <td id="readingWritingStResultShields"></td>
+                    <td id="speakingStResultShields"></td>
+                    <td id="shieldSumSt"></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+    <!--STATERS SECTION END-->
 
-    <div class="labelContainer">
-    <input type="number" id="listeningStInput" max="20" min="0" step="1" placeholder="0-20"><br>
-    <input type="number" id="readingWritingStInput" max="25" min="0" step="1" placeholder="0-25"><br>
-    <input type="number" id="speakingStInput" max="15" min="0" step="1" placeholder="0-15"><br>
+    <!--MOVERS SECTION START-->
+    <div id="parametersMov" class="hidden">
+        <h2>MOVERS</h2>
+        <div class="yleContainer">
+            <div class="labelContainer">
+                <label for="listeningMovInput" class="listeningLabels">Listening</label><br>
+                <label for="readingWritingMovInput">Reading and Writing</label><br>
+                <label for="speakingMovInput">Speaking</label><br>
+            </div>
+            <div class="inputContainer">
+                <input type="number" id="listeningMovInput" max="25" min="0" step="1" placeholder="0-25"><br>
+                <input type="number" id="readingWritingMovInput" max="35" min="0" step="1" placeholder="0-35"><br>
+                <input type="number" id="speakingMovInput" max="15" min="0" step="1" placeholder="0-15"><br>
+            </div>
+        </div>
+        <p id="movErrorMessaging" class="errorMessage"></p>
+
+        <button type="submit" id="calculateMov" class="calculateBtn">Calculate</button>
+
+        <table class="resultTable" id="movResults">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Listening</th>
+                    <th>Reading and Writing</th>
+                    <th>Speaking</th>
+                    <th>Pass/Fail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Result</td>
+                    <td id="listeningMovResult"></td>
+                    <td id="readingWritingMovResult"></td>
+                    <td id="speakingMovResult"></td>
+                    <td id="gradeMov"></td>
+                </tr>
+                <tr>
+                    <td>Number of Shields</td>
+                    <td id="listeningMovResultShields"></td>
+                    <td id="readingWritingMovResultShields"></td>
+                    <td id="speakingMovResultShields"></td>
+                    <td id="shieldSumMov"></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+    <!--MOVERS SECTION END-->
 
+    <!--FLYERS SECTION START-->
+    <div id="parametersFl" class="hidden">
+        <h2>FLYERS</h2>
+        <div class="yleContainer">
+            <div class="labelContainer">
+                <label for="listeningFlInput" class="listeningLabels">Listening</label><br>
+                <label for="readingWritingFlInput">Reading and Writing</label><br>
+                <label for="speakingFlInput">Speaking</label><br>
+            </div>
+
+            <div class="inputContainer">
+                <input type="number" id="listeningFlInput" max="25" min="0" step="1" placeholder="0-25"><br>
+                <input type="number" id="readingWritingFlInput" max="44" min="0" step="1" placeholder="0-44"><br>
+                <input type="number" id="speakingFlInput" max="15" min="0" step="1" placeholder="0-15"><br>
+            </div>
+        </div>
+
+        <p id="flErrorMessaging" class="errorMessage"></p>
+
+        <button type="submit" id="calculateFl" class="calculateBtn">Calculate</button>
+
+        <table class="resultTable" id="flResults">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Listening</th>
+                    <th>Reading and Writing</th>
+                    <th>Speaking</th>
+                    <th>Pass/Fail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Result</td>
+                    <td id="listeningFlResult"></td>
+                    <td id="readingWritingFlResult"></td>
+                    <td id="speakingFlResult"></td>
+                    <td id="gradeFl"></td>
+                </tr>
+                <tr>
+                    <td>Number of Shields</td>
+                    <td id="listeningFlResultShields"></td>
+                    <td id="readingWritingFlResultShields"></td>
+                    <td id="speakingFlResultShields"></td>
+                    <td id="shieldSumFl"></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    <p id="stErrorMessaging" class="errorMessage"></p>
-    <button type="button" id="calculateSt" class="calculateBtn">Calculate</button>
-    <br>
-    <br>
-    <table class="resultTable" id="stResults">
-        <thead>
-            <tr>
-                <th></th>
-                <th>Listening</th>
-                <th>Reading and Writing</th>
-                <th>Speaking</th>
-                <th>Pass/Fail</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Result</td>
-                <td id="listeningStResult"></td>
-                <td id="readingWritingStResult"></td>
-                <td id="speakingStResult"></td>
-                <td id="gradeSt"></td>
-            </tr>
-            <tr>
-                <td>Number of Shields</td>
-                <td id="listeningStResultShields"></td>
-                <td id="readingWritingStResultShields"></td>
-                <td id="speakingStResultShields"></td>
-                <td id="shieldSumSt"></td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<!--STATERS SECTION END-->
+    <!--FLYERS SECTION END-->
 
-<!--MOVERS SECTION START-->
-<div id="parametersMov" class="hiddenMov">
-    <h2>MOVERS</h2>
-    <label for="listeningMovInput">Listening</label>
-    <input type="number" id="listeningMovInput" max="25" min="0" step="1" placeholder="0-25"><br>
-    <label for="readingWritingMovInput">Reading and Writing</label>
-    <input type="number" id="readingWritingMovInput" max="35" min="0" step="1" placeholder="0-35"><br>
-    <label for="speakingMovInput">Speaking</label>
-    <input type="number" id="speakingMovInput" max="15" min="0" step="1" placeholder="0-15"><br>
-    <br>
-    <p id="movErrorMessaging"></p>
-    <br>
-    <button type="submit" id="calculateMov">Calculate</button>
-    <br>
-    <br>
-    <table border="1" id="movResults">
-        <thead>
+    <!-- KET SECTION START -->
+    <div id="parametersKet" class="hidden">
+        <h2>KET</h2>
+        <label for="listeningKetInput" class="listeningLabels">Listening</label>
+        <input type="number" id="listeningKetInput" min="0" max="25" step="1" placeholder="0-25"><br>
+        <label for="readingWritingKetInput">Reading and Writing</label>
+        <input type="number" id="readingWritingKetInput" min="0" max="60" step="1" placeholder="0-60"><br>
+        <label for="speakingKetInput">Speaking</label>
+        <input type="number" id="speakingKetInput" min="0" max="45" step="1" placeholder="0-45"><br>
+       
+        <p id="ketErrorMessaging" class="errorMessage"></p>
+      
+        <button type="submit" id="calculateKet" class="calculateBtn">Calculate</button>
+       
+        <table class="resultTable" id="ketResults">
             <tr>
-                <th>Skill</th>
-                <th>Result</th>
-                <th>Number of Shields</th>
-                <th id="gradeMov">Pass/Fail</th>
+                <td>Average Score</td>
+                <td id="averageScoreKet">140</td>
+                <td id="gradeKet">A2 Grade A</td>
             </tr>
-        </thead>
-        <tbody>
             <tr>
                 <td>Listening</td>
-                <td id="listeningMovResult"></td>
-                <td id="listeningMovResultShields"></td>
+                <td id="listeningKetResult">140</td>
             </tr>
             <tr>
                 <td>Reading and Writing</td>
-                <td id="readingWritingMovResult"></td>
-                <td id="readingWritingMovResultShields"></td>
+                <td id="readingWritingKetResult">150</td>
             </tr>
             <tr>
                 <td>Speaking</td>
-                <td id="speakingMovResult"></td>
-                <td id="speakingMovResultShields"></td>
+                <td id="speakingKetResult">160</td>
             </tr>
-        </tbody>
-    </table>
-</div>
-<!--MOVERS SECTION END-->
+        </table>
+    </div>
+    <!-- KET SECTION END -->
 
-<!--FLYERS SECTION START-->
-<div id="parametersFl" class="hiddenFl">
-    <h2>FLYERS</h2>
-    <label for="listeningFlInput">Listening</label>
-    <input type="number" id="listeningFlInput" max="25" min="0" step="1" placeholder="0-25"><br>
-    <label for="readingWritingFlInput">Reading and Writing</label>
-    <input type="number" id="readingWritingFlInput" max="44" min="0" step="1" placeholder="0-44"><br>
-    <label for="speakingFlInput">Speaking</label>
-    <input type="number" id="speakingFlInput" max="15" min="0" step="1" placeholder="0-15"><br>
-    <br>
-    <p id="flErrorMessaging"></p>
-    <br>
-    <button type="submit" id="calculateFl">Calculate</button>
-    <br>
-    <br>
-    <table border="1" id="flResults">
-        <thead>
+    <!-- PET SECTION START -->
+    <div id="parametersPet" class="hidden">
+        <h2>PET</h2>
+        <label for="listeningPetInput" class="listeningLabels">Listening</label>
+        <input type="number" id="listeningPetInput" min="0" max="25" step="1" placeholder="0-25"><br>
+        <label for="readingPetInput">Reading</label>
+        <input type="number" id="readingPetInput" min="0" max="32" step="1" placeholder="0-32"><br>
+        <label for="writingPetInput">Writing</label>
+        <input type="number" id="writingPetInput" min="0" max="40" step="1" placeholder="0-40"><br>
+        <label for="speakingPetInput">Speaking</label>
+        <input type="number" id="speakingPetInput" min="0" max="30" step="1" placeholder="0-30"><br>
+        
+        <p id="petErrorMessaging" class="errorMessage"></p>
+        
+        <button type="submit" id="calculatePet" class="calculateBtn">Calculate</button>
+       
+        <table class="resultTable" id="petResults">
             <tr>
-                <th>Skill</th>
-                <th>Result</th>
-                <th>Number of Shields</th>
-                <th id="gradeFl">Pass/Fail</th>
+                <td>Average Score</td>
+                <td id="averageScorePet">140</td>
+                <td id="gradePet">A2 Grade A</td>
             </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Listening</td>
-            <td id="listeningFlResult"></td>
-            <td id="listeningFlResultShields"></td>
-        </tr>
-        <tr>
-            <td>Reading and Writing</td>
-            <td id="readingWritingFlResult"></td>
-            <td id="readingWritingFlResultShields"></td>
-        </tr>
-        <tr>
-            <td>Speaking</td>
-            <td id="speakingFlResult"></td>
-            <td id="speakingFlResultShields"></td>
-        </tr>
-        </tbody>
-    </table>
-</div>
-<!--FLYERS SECTION END-->
+            <tr>
+                <td>Listening</td>
+                <td id="listeningPetResult">140</td>
+            </tr>
+            <tr>
+                <td>Reading</td>
+                <td id="readingPetResult">150</td>
+            </tr>
+            <tr>
+                <td>Writing</td>
+                <td id="writingPetResult">150</td>
+            </tr>
+            <tr>
+                <td>Speaking</td>
+                <td id="speakingPetResult">160</td>
+            </tr>
+        </table>
+    </div>
+    <!-- PET SECTION END -->
 
-<!-- KET SECTION START -->
-<div id="parametersKet" class="hiddenKet">
-    <h2>KET</h2>
-    <label for="listeningKetInput">Listening</label>
-    <input type="number" id="listeningKetInput" min="0" max="25" step="1" placeholder="0-25"><br>
-    <label for="readingWritingKetInput">Reading and Writing</label>
-    <input type="number" id="readingWritingKetInput" min="0" max="60" step="1" placeholder="0-60"><br>
-    <label for="speakingKetInput">Speaking</label>
-    <input type="number" id="speakingKetInput" min="0" max="45" step="1" placeholder="0-45"><br>
-    <br>
-    <p id="ketErrorMessaging"></p>
-    <br>
-    <button type="submit" id="calculateKet">Calculate</button>
-    <br>
-    <br>
-    <table border="1" id="ketResults">
-        <tr>
-            <td>Average Score</td>
-            <td id="averageScoreKet">140</td>
-            <td id="gradeKet">A2 Grade A</td>
-        </tr>
-        <tr>
-            <td>Listening</td>
-            <td id="listeningKetResult">140</td>
-        </tr>
-        <tr>
-            <td>Reading and Writing</td>
-            <td id="readingWritingKetResult">150</td>
-        </tr>
-        <tr>
-            <td>Speaking</td>
-            <td id="speakingKetResult">160</td>
-        </tr>
-    </table>
-</div>
-<!-- KET SECTION END -->
+    <!-- FCE SECTION START -->
+    <div id="parametersFCE" class="hidden">
+        <h2>FCE</h2>
+        <label for="listeningFCEInput" class="listeningLabels">Listening</label>
+        <input type="number" id="listeningFCEInput" min="0" max="30" step="1" placeholder="0-30"><br>
+        <label for="readingFCEInput">Reading</label>
+        <input type="number" id="readingFCEInput" min="0" max="42" step="1" placeholder="0-42"><br>
+        <label for="useFCEInput">Use of English</label>
+        <input type="number" id="useFCEInput" min="0" max="28" step="1" placeholder="0-28"><br>
+        <label for="writingFCEInput">Writing</label>
+        <input type="number" id="writingFCEInput" min="0" max="40" step="1" placeholder="0-40"><br>
+        <label for="speakingFCEInput">Speaking</label>
+        <input type="number" id="speakingFCEInput" min="0" max="60" step="1" placeholder="0-60"><br>
+       
+        <p id="fceErrorMessaging" class="errorMessage"></p>
+      
+        <button type="submit" id="calculateFCE" class="calculateBtn">Calculate</button>
+      
+        <table class="resultTable" id="fceResults">
+            <tr>
+                <td>Average Score</td>
+                <td id="averageScoreFCE">140</td>
+                <td id="gradeFCE">A2 Grade A</td>
+            </tr>
+            <tr>
+                <td>Listening</td>
+                <td id="listeningFCEResult">140</td>
+            </tr>
+            <tr>
+                <td>Reading</td>
+                <td id="readingFCEResult">150</td>
+            </tr>
+            <tr>
+                <td>Use of English</td>
+                <td id="useFCEResult">150</td>
+            </tr>
+            <tr>
+                <td>Writing</td>
+                <td id="writingFCEResult">150</td>
+            </tr>
+            <tr>
+                <td>Speaking</td>
+                <td id="speakingFCEResult">160</td>
+            </tr>
+        </table>
+    </div>
+    <!-- FCE SECTION END -->
 
-<!-- PET SECTION START -->
-<div id="parametersPet" class="hiddenPet">
-    <h2>PET</h2>
-    <label for="listeningPetInput">Listening</label>
-    <input type="number" id="listeningPetInput" min="0" max="25" step="1" placeholder="0-25"><br>
-    <label for="readingPetInput">Reading</label>
-    <input type="number" id="readingPetInput" min="0" max="32" step="1" placeholder="0-32"><br>
-    <label for="writingPetInput">Writing</label>
-    <input type="number" id="writingPetInput" min="0" max="40" step="1" placeholder="0-40"><br>
-    <label for="speakingPetInput">Speaking</label>
-    <input type="number" id="speakingPetInput" min="0" max="30" step="1" placeholder="0-30"><br>
-    <br>
-    <p id="petErrorMessaging"></p>
-    <br>
-    <button type="submit" id="calculatePet">Calculate</button>
-    <br>
-    <br>
-    <table border="1" id="petResults">
-        <tr>
-            <td>Average Score</td>
-            <td id="averageScorePet">140</td>
-            <td id="gradePet">A2 Grade A</td>
-        </tr>
-        <tr>
-            <td>Listening</td>
-            <td id="listeningPetResult">140</td>
-        </tr>
-        <tr>
-            <td>Reading</td>
-            <td id="readingPetResult">150</td>
-        </tr>
-        <tr>
-            <td>Writing</td>
-            <td id="writingPetResult">150</td>
-        </tr>
-        <tr>
-            <td>Speaking</td>
-            <td id="speakingPetResult">160</td>
-        </tr>
-    </table>
-</div>
-<!-- PET SECTION END -->
-
-<!-- FCE SECTION START -->
-<div id="parametersFCE" class="hiddenFCE">
-    <h2>FCE</h2>
-    <label for="listeningFCEInput">Listening</label>
-    <input type="number" id="listeningFCEInput" min="0" max="30" step="1" placeholder="0-30"><br>
-    <label for="readingFCEInput">Reading</label>
-    <input type="number" id="readingFCEInput" min="0" max="42" step="1" placeholder="0-42"><br>
-    <label for="useFCEInput">Use of English</label>
-    <input type="number" id="useFCEInput" min="0" max="28" step="1" placeholder="0-28"><br>
-    <label for="writingFCEInput">Writing</label>
-    <input type="number" id="writingFCEInput" min="0" max="40" step="1" placeholder="0-40"><br>
-    <label for="speakingFCEInput">Speaking</label>
-    <input type="number" id="speakingFCEInput" min="0" max="60" step="1" placeholder="0-60"><br>
-    <br>
-    <p id="fceErrorMessaging"></p>
-    <br>
-    <button type="submit" id="calculateFCE">Calculate</button>
-    <br>
-    <br>
-    <table border="1" id="fceResults">
-        <tr>
-            <td>Average Score</td>
-            <td id="averageScoreFCE">140</td>
-            <td id="gradeFCE">A2 Grade A</td>
-        </tr>
-        <tr>
-            <td>Listening</td>
-            <td id="listeningFCEResult">140</td>
-        </tr>
-        <tr>
-            <td>Reading</td>
-            <td id="readingFCEResult">150</td>
-        </tr>
-        <tr>
-            <td>Use of English</td>
-            <td id="useFCEResult">150</td>
-        </tr>
-        <tr>
-            <td>Writing</td>
-            <td id="writingFCEResult">150</td>
-        </tr>
-        <tr>
-            <td>Speaking</td>
-            <td id="speakingFCEResult">160</td>
-        </tr>
-    </table>
-</div>
-<!-- FCE SECTION END -->
-
-<!--CAE SECTION START-->
-<div id="parametersCAE" class="hiddenCAE">
-    <h2>CAE</h2>
-    <label for="listeningCAEInput">Listening</label>
-    <input type="number" id="listeningCAEInput" min="0" max="60" step="1" placeholder="0-30"><br>
-    <label for="readingCAEInput">Reading</label>
-    <input type="number" id="readingCAEInput" min="0" max="50" step="1" placeholder="0-50"><br>
-    <label for="useCAEInput">Use of English</label>
-    <input type="number" id="useCAEInput" min="0" max="28" step="1" placeholder="0-28"><br>
-    <label for="writingCAEInput">Writing</label>
-    <input type="number" id="writingCAEInput" min="0" max="40" step="1" placeholder="0-40"><br>
-    <label for="speakingCAEInput">Speaking</label>
-    <input type="number" id="speakingCAEInput" min="0" max="75" step="1" placeholder="0-75"><br>
-    <br>
-    <p id="caeErrorMessaging"></p>
-    <br>
-    <button type="submit" id="calculateCAE">Calculate</button>
-    <br>
-    <br>
-    <table border="1" id="caeResults">
-        <tr>
-            <td>Average Score</td>
-            <td id="averageScoreCAE">140</td>
-            <td id="gradeCAE">A2 Grade A</td>
-        </tr>
-        <tr>
-            <td>Listening</td>
-            <td id="listeningCAEResult">140</td>
-        </tr>
-        <tr>
-            <td>Reading</td>
-            <td id="readingCAEResult">150</td>
-        </tr>
-        <tr>
-            <td>Use of English</td>
-            <td id="useCAEResult">150</td>
-        </tr>
-        <tr>
-            <td>Writing</td>
-            <td id="writingCAEResult">150</td>
-        </tr>
-        <tr>
-            <td>Speaking</td>
-            <td id="speakingCAEResult">160</td>
-        </tr>
-    </table>
-</div>
-<!--CAE SECTION END-->
-<script src="index.js"></script>
+    <!--CAE SECTION START-->
+    <div id="parametersCAE" class="hidden">
+        <h2>CAE</h2>
+        <label for="listeningCAEInput" class="listeningLabels">Listening</label>
+        <input type="number" id="listeningCAEInput" min="0" max="60" step="1" placeholder="0-30"><br>
+        <label for="readingCAEInput">Reading</label>
+        <input type="number" id="readingCAEInput" min="0" max="50" step="1" placeholder="0-50"><br>
+        <label for="useCAEInput">Use of English</label>
+        <input type="number" id="useCAEInput" min="0" max="28" step="1" placeholder="0-28"><br>
+        <label for="writingCAEInput">Writing</label>
+        <input type="number" id="writingCAEInput" min="0" max="40" step="1" placeholder="0-40"><br>
+        <label for="speakingCAEInput">Speaking</label>
+        <input type="number" id="speakingCAEInput" min="0" max="75" step="1" placeholder="0-75"><br>
+      
+        <p id="caeErrorMessaging" class="errorMessage"></p>
+       
+        <button type="submit" id="calculateCAE" class="calculateBtn">Calculate</button>
+       
+        <table class="resultTable" id="caeResults">
+            <tr>
+                <td>Average Score</td>
+                <td id="averageScoreCAE">140</td>
+                <td id="gradeCAE">A2 Grade A</td>
+            </tr>
+            <tr>
+                <td>Listening</td>
+                <td id="listeningCAEResult">140</td>
+            </tr>
+            <tr>
+                <td>Reading</td>
+                <td id="readingCAEResult">150</td>
+            </tr>
+            <tr>
+                <td>Use of English</td>
+                <td id="useCAEResult">150</td>
+            </tr>
+            <tr>
+                <td>Writing</td>
+                <td id="writingCAEResult">150</td>
+            </tr>
+            <tr>
+                <td>Speaking</td>
+                <td id="speakingCAEResult">160</td>
+            </tr>
+        </table>
+    </div>
+    <!--CAE SECTION END-->
+    <script src="index.js"></script>
 </body>
+
 </html>

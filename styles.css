@@ -1,72 +1,67 @@
+:root {
+    --main-font-size: 16px;
+    --main-text-color: #333;
+    --secondary-color: #eee;
+    --button-border-radius: 5px;
+    --main-margin-left: 3rem;
+}
+
+body {
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
 .title {
     text-align: center;
-    font-size: 40;
+    font-size: 2.5rem;
 }
 
 .subtitle {
-    margin-top: 25px;
-    margin-left: 50px;
+    margin-top: 1.5rem;
+    margin-left: 3rem;
     font-size: 24px;
 }
 
 .btnContainer {
     display: flex;
     gap: 30px;
-    margin-left: 50px;
+    margin-left: 3rem;
 }
 
-.hiddenSt {
+.hidden {
     display: none;
 }
 
-#parametersSt {
-    margin-left: 50px;
+#parametersSt,
+#parametersMov,
+#parametersFl,
+#parametersKet,
+#parametersPet,
+#parametersFCE,
+#parametersCAE {
+    margin-left: 3rem;
 }
-
-.hiddenMov {
-    display: none;
-}
-.hiddenFl {
-    display: none;
-}
-.hiddenKet {
-    display: none;
-}
-.hiddenPet {
-    display: none;
-}
-.hiddenFCE {
-    display: none;
-}
-.hiddenCAE {
-    display: none;
-}
-/* .hiddenCPE {
-    display: none;
-} */
 
 .selectBtn {
-    width: 100px;
-    height: 40px;
+    min-width: 100px;
+    min-height: 40px;
     font-size: 20px;
     border: solid 1px;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.selectBtn:hover{
+.selectBtn:hover {
     background-color: rgb(175, 175, 175);
 }
 
 .yleContainer {
     display: flex;
-    flex-direction: row;
     gap: 20px;
 }
 
 label {
     font-size: 18px;
-    line-height: 24px;
+    line-height: 1.5rem;
 }
 
 input {
@@ -77,6 +72,7 @@ input {
 .errorMessage {
     font-size: 18px;
     color: red;
+    margin-top: 1rem;
 }
 
 .calculateBtn {
@@ -85,16 +81,16 @@ input {
     border-radius: 5px;
     cursor: pointer;
     padding: 5px;
+    margin-bottom: 1rem;
 }
 
-.calculateBtn:hover{
+.calculateBtn:hover {
     background-color: rgb(175, 175, 175);
 }
 
 .resultTable {
     font-size: 18px;
     border-collapse: collapse;
-    /* border: solid 1px; */
 }
 
 th {
@@ -102,7 +98,8 @@ th {
     background-color: rgb(230, 230, 230);
 }
 
-th, td {
+th,
+td {
     border: solid 1px;
     padding: 5px;
 }
