@@ -25,21 +25,37 @@
         <button id="selectFCE" class="selectBtn">FCE</button>
         <button id="selectCAE" class="selectBtn">CAE</button>
     </div>
-    <br>
-    <br>
+
+    <div class="hotkeyInstructions">
+        <fieldset>
+        <legend>Hotkeys</legend>
+        <ul>
+        <li>S ➡ Starters</li>
+        <li>M ➡ Movers</li>
+        <li>F ➡ Flyers</li>
+        <li>K ➡ Ket</li>
+        <li>P ➡ PET</li>
+        <li>E ➡ FCE</li>
+        <li>C ➡ CAE</li>
+        <li>Enter ➡ calculate </li>
+        <li>L ➡ move to listening</li>
+        <li>Tab ➡ move up and down</li>
+        </ul>
+        </fieldset>
+    </div>
 
     <!--STATERS SECTION START-->
     <div id="parametersSt" class="hidden">
         <h2>STARTERS</h2>
-        <div class="yleContainer">
+        <div class="inputContainer">
 
-            <div class="labelContainer">
+            <div>
                 <label for="listeningStInput" class="listeningLabels">Listening</label><br>
                 <label for="readingWritingStInput">Reading and Writing</label><br>
                 <label for="speakingStInput">Speaking</label><br>
             </div>
 
-            <div class="inputContainer">
+            <div>
                 <input type="number" id="listeningStInput" max="20" min="0" step="1" placeholder="0-20"><br>
                 <input type="number" id="readingWritingStInput" max="25" min="0" step="1" placeholder="0-25"><br>
                 <input type="number" id="speakingStInput" max="15" min="0" step="1" placeholder="0-15"><br>
@@ -82,13 +98,13 @@
     <!--MOVERS SECTION START-->
     <div id="parametersMov" class="hidden">
         <h2>MOVERS</h2>
-        <div class="yleContainer">
-            <div class="labelContainer">
+        <div class="inputContainer">
+            <div>
                 <label for="listeningMovInput" class="listeningLabels">Listening</label><br>
                 <label for="readingWritingMovInput">Reading and Writing</label><br>
                 <label for="speakingMovInput">Speaking</label><br>
             </div>
-            <div class="inputContainer">
+            <div>
                 <input type="number" id="listeningMovInput" max="25" min="0" step="1" placeholder="0-25"><br>
                 <input type="number" id="readingWritingMovInput" max="35" min="0" step="1" placeholder="0-35"><br>
                 <input type="number" id="speakingMovInput" max="15" min="0" step="1" placeholder="0-15"><br>
@@ -131,14 +147,14 @@
     <!--FLYERS SECTION START-->
     <div id="parametersFl" class="hidden">
         <h2>FLYERS</h2>
-        <div class="yleContainer">
-            <div class="labelContainer">
+        <div class="inputContainer">
+            <div>
                 <label for="listeningFlInput" class="listeningLabels">Listening</label><br>
                 <label for="readingWritingFlInput">Reading and Writing</label><br>
                 <label for="speakingFlInput">Speaking</label><br>
             </div>
 
-            <div class="inputContainer">
+            <div>
                 <input type="number" id="listeningFlInput" max="25" min="0" step="1" placeholder="0-25"><br>
                 <input type="number" id="readingWritingFlInput" max="44" min="0" step="1" placeholder="0-44"><br>
                 <input type="number" id="speakingFlInput" max="15" min="0" step="1" placeholder="0-15"><br>
@@ -182,13 +198,18 @@
     <!-- KET SECTION START -->
     <div id="parametersKet" class="hidden">
         <h2>KET</h2>
-        <label for="listeningKetInput" class="listeningLabels">Listening</label>
-        <input type="number" id="listeningKetInput" min="0" max="25" step="1" placeholder="0-25"><br>
-        <label for="readingWritingKetInput">Reading and Writing</label>
-        <input type="number" id="readingWritingKetInput" min="0" max="60" step="1" placeholder="0-60"><br>
-        <label for="speakingKetInput">Speaking</label>
-        <input type="number" id="speakingKetInput" min="0" max="45" step="1" placeholder="0-45"><br>
-       
+        <div class="inputContainer">
+            <div>
+                <label for="listeningKetInput" class="listeningLabels">Listening</label><br>
+                <label for="readingWritingKetInput">Reading and Writing</label><br>
+                <label for="speakingKetInput">Speaking</label><br>
+            </div>
+            <div>
+                <input type="number" id="listeningKetInput" min="0" max="25" step="1" placeholder="0-25"><br>
+                <input type="number" id="readingWritingKetInput" min="0" max="60" step="1" placeholder="0-60"><br>
+                <input type="number" id="speakingKetInput" min="0" max="45" step="1" placeholder="0-45"><br>
+            </div>
+        </div>
         <p id="ketErrorMessaging" class="errorMessage"></p>
       
         <button type="submit" id="calculateKet" class="calculateBtn">Calculate</button>
@@ -218,15 +239,20 @@
     <!-- PET SECTION START -->
     <div id="parametersPet" class="hidden">
         <h2>PET</h2>
-        <label for="listeningPetInput" class="listeningLabels">Listening</label>
-        <input type="number" id="listeningPetInput" min="0" max="25" step="1" placeholder="0-25"><br>
-        <label for="readingPetInput">Reading</label>
-        <input type="number" id="readingPetInput" min="0" max="32" step="1" placeholder="0-32"><br>
-        <label for="writingPetInput">Writing</label>
-        <input type="number" id="writingPetInput" min="0" max="40" step="1" placeholder="0-40"><br>
-        <label for="speakingPetInput">Speaking</label>
-        <input type="number" id="speakingPetInput" min="0" max="30" step="1" placeholder="0-30"><br>
-        
+        <div class="inputContainer">
+            <div>
+                <label for="listeningPetInput" class="listeningLabels">Listening</label><br>
+                <label for="readingPetInput">Reading</label><br>
+                <label for="writingPetInput">Writing</label><br>
+                <label for="speakingPetInput">Speaking</label><br>
+            </div>
+            <div>
+                <input type="number" id="listeningPetInput" min="0" max="25" step="1" placeholder="0-25"><br>
+                <input type="number" id="readingPetInput" min="0" max="32" step="1" placeholder="0-32"><br>
+                <input type="number" id="writingPetInput" min="0" max="40" step="1" placeholder="0-40"><br>
+                <input type="number" id="speakingPetInput" min="0" max="30" step="1" placeholder="0-30"><br>
+            </div>
+        </div>
         <p id="petErrorMessaging" class="errorMessage"></p>
         
         <button type="submit" id="calculatePet" class="calculateBtn">Calculate</button>
@@ -260,17 +286,22 @@
     <!-- FCE SECTION START -->
     <div id="parametersFCE" class="hidden">
         <h2>FCE</h2>
-        <label for="listeningFCEInput" class="listeningLabels">Listening</label>
-        <input type="number" id="listeningFCEInput" min="0" max="30" step="1" placeholder="0-30"><br>
-        <label for="readingFCEInput">Reading</label>
-        <input type="number" id="readingFCEInput" min="0" max="42" step="1" placeholder="0-42"><br>
-        <label for="useFCEInput">Use of English</label>
-        <input type="number" id="useFCEInput" min="0" max="28" step="1" placeholder="0-28"><br>
-        <label for="writingFCEInput">Writing</label>
-        <input type="number" id="writingFCEInput" min="0" max="40" step="1" placeholder="0-40"><br>
-        <label for="speakingFCEInput">Speaking</label>
-        <input type="number" id="speakingFCEInput" min="0" max="60" step="1" placeholder="0-60"><br>
-       
+        <div class="inputContainer">
+            <div>
+                <label for="listeningFCEInput" class="listeningLabels">Listening</label><br>
+                <label for="readingFCEInput">Reading</label><br>
+                <label for="useFCEInput">Use of English</label><br>
+                <label for="writingFCEInput">Writing</label><br>
+                <label for="speakingFCEInput">Speaking</label><br>
+            </div>
+            <div>
+                <input type="number" id="listeningFCEInput" min="0" max="30" step="1" placeholder="0-30"><br>
+                <input type="number" id="readingFCEInput" min="0" max="42" step="1" placeholder="0-42"><br>
+                <input type="number" id="useFCEInput" min="0" max="28" step="1" placeholder="0-28"><br>
+                <input type="number" id="writingFCEInput" min="0" max="40" step="1" placeholder="0-40"><br>
+                <input type="number" id="speakingFCEInput" min="0" max="60" step="1" placeholder="0-60"><br>
+            </div>
+        </div>
         <p id="fceErrorMessaging" class="errorMessage"></p>
       
         <button type="submit" id="calculateFCE" class="calculateBtn">Calculate</button>
@@ -308,17 +339,22 @@
     <!--CAE SECTION START-->
     <div id="parametersCAE" class="hidden">
         <h2>CAE</h2>
-        <label for="listeningCAEInput" class="listeningLabels">Listening</label>
-        <input type="number" id="listeningCAEInput" min="0" max="60" step="1" placeholder="0-30"><br>
-        <label for="readingCAEInput">Reading</label>
-        <input type="number" id="readingCAEInput" min="0" max="50" step="1" placeholder="0-50"><br>
-        <label for="useCAEInput">Use of English</label>
-        <input type="number" id="useCAEInput" min="0" max="28" step="1" placeholder="0-28"><br>
-        <label for="writingCAEInput">Writing</label>
-        <input type="number" id="writingCAEInput" min="0" max="40" step="1" placeholder="0-40"><br>
-        <label for="speakingCAEInput">Speaking</label>
-        <input type="number" id="speakingCAEInput" min="0" max="75" step="1" placeholder="0-75"><br>
-      
+        <div class="inputContainer">
+            <div>
+                <label for="listeningCAEInput" class="listeningLabels">Listening</label><br>
+                <label for="readingCAEInput">Reading</label><br>
+                <label for="useCAEInput">Use of English</label><br>
+                <label for="writingCAEInput">Writing</label><br>
+                <label for="speakingCAEInput">Speaking</label><br>
+            </div>
+            <div>
+                <input type="number" id="listeningCAEInput" min="0" max="60" step="1" placeholder="0-30"><br>
+                <input type="number" id="readingCAEInput" min="0" max="50" step="1" placeholder="0-50"><br>
+                <input type="number" id="useCAEInput" min="0" max="28" step="1" placeholder="0-28"><br>
+                <input type="number" id="writingCAEInput" min="0" max="40" step="1" placeholder="0-40"><br>
+                <input type="number" id="speakingCAEInput" min="0" max="75" step="1" placeholder="0-75"><br>
+            </div>
+        </div>
         <p id="caeErrorMessaging" class="errorMessage"></p>
        
         <button type="submit" id="calculateCAE" class="calculateBtn">Calculate</button>

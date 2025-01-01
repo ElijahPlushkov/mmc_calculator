@@ -6,6 +6,10 @@
     --main-margin-left: 3rem;
 }
 
+ul {
+    list-style: none;
+}
+
 body {
     font-family: Verdana, Tahoma, sans-serif;
 }
@@ -25,6 +29,15 @@ body {
     display: flex;
     gap: 30px;
     margin-left: 3rem;
+}
+
+.hotkeyInstructions {
+    position: absolute;
+    right: 3rem;
+}
+
+.hotkeyInstructions legend {
+    font-weight: 600;
 }
 
 .hidden {
@@ -54,7 +67,7 @@ body {
     background-color: rgb(175, 175, 175);
 }
 
-.yleContainer {
+.inputContainer {
     display: flex;
     gap: 20px;
 }

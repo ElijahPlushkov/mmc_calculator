@@ -3,16 +3,17 @@
 // Specific hotkeys can be found in their respective sections.
 
 document.addEventListener('keydown', function(event) {
-    if (event.key === 'l') {
+    if (event.code === 'KeyL') {
         const inputs = document.querySelectorAll('.listeningLabels');
         inputs.forEach(input => {
             input.focus();
         });
+        event.preventDefault();
     }
 });
 
 document.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
+    if (event.code === 'Enter') {
         const buttons = document.querySelectorAll('.calculateBtn');
         buttons.forEach(button => {
             button.click();
@@ -473,7 +474,6 @@ calculateFl.addEventListener("click", function () {
 //FLYERS SECTION END
 
 //KET SECTION START
-
 const selectKet = document.getElementById("selectKet");
 const parametersKet = document.getElementById("parametersKet");
 
