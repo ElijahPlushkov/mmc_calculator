@@ -2,7 +2,7 @@
 // This section contains the keybindings used across the entire webpage.
 // Specific hotkeys can be found in their respective sections.
 
-document.addEventListener('keydown', function(event) {
+document.addEventListener('keydown', function (event) {
     if (event.code === 'KeyL') {
         const inputs = document.querySelectorAll('.listeningLabels');
         inputs.forEach(input => {
@@ -12,7 +12,7 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-document.addEventListener('keydown', function(event) {
+document.addEventListener('keydown', function (event) {
     if (event.code === 'Enter') {
         const buttons = document.querySelectorAll('.calculateBtn');
         buttons.forEach(button => {
@@ -21,6 +21,19 @@ document.addEventListener('keydown', function(event) {
         event.preventDefault();
     }
 });
+
+function toggleHotkeysInstructions() {
+    const hotkeysInstructions = document.getElementById("hotkeysInstructions");
+    if (window.innerWidth <= 768) {
+        hotkeysInstructions.style.display = 'none';
+    }
+    else {
+        hotkeysInstructions.style.display = '';
+    }
+}
+
+window.addEventListener("DOMContentLoaded", toggleHotkeysInstructions);
+window.addEventListener('resize', toggleHotkeysInstructions);
 
 //STATERS SECTION START
 const selectSt = document.getElementById("selectSt");

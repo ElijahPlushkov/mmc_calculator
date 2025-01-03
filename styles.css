@@ -116,3 +116,52 @@ td {
     border: solid 1px;
     padding: 5px;
 }
+
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    label {
+        font-size: 19px;
+        line-height: 1.5rem;
+        padding: 15px;
+    }
+
+    input {
+        width: 100px;
+        font-size: 18px;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        margin-top: 1rem;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .btnContainer {
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+    }
+
+    #parametersSt,
+    #parametersMov,
+    #parametersFl,
+    #parametersKet,
+    #parametersPet,
+    #parametersFCE,
+    #parametersCAE {
+        margin-left: auto;
+    }
+
+    .resultTable {
+        font-size: 16px;
+        max-width: 100%;
+    }
+}
